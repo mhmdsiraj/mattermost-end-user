@@ -1,0 +1,68 @@
+@layer base, starlight, theme, components, utilities;
+
+@import '@astrojs/starlight-tailwind';
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+@theme {
+  /* الخطوط المفضلة */
+  --font-sans: 'IBM Plex Sans Arabic', ui-sans-serif, system-ui;
+  
+  /* Primary Colors (الأخضر - من الصورة الأولى) */
+  --color-accent-25: #F6FEFC;
+  --color-accent-50: #EFFEFA;
+  --color-accent-100: #c7ffef;
+  --color-accent-200: #90ffe0;
+  --color-accent-300: #51f7cf;
+  --color-accent-400: #1de4bb;
+  --color-accent-500: #04c8a2;
+  --color-accent-600: #00987e;
+  --color-accent-700: #05806c;
+  --color-accent-800: #0a6558;
+  --color-accent-900: #0d5449;
+  --color-accent-950: #00332e;
+
+  /* Neutral Colors (الرمادي - من الصورة الثانية) */
+  --color-gray-25: #FCFCFD;
+  --color-gray-50: #F9FAFB;
+  --color-gray-100: #F3F4F6;
+  --color-gray-200: #E5E7EB;
+  --color-gray-300: #D2D6DB;
+  --color-gray-400: #9DA4AE;
+  --color-gray-500: #6C737F;
+  --color-gray-600: #4D5761;
+  --color-gray-700: #384250;
+  --color-gray-800: #1F2A37;
+  --color-gray-900: #111927;
+  --color-gray-950: #0D121C;
+}
+
+/* تخصيص مظهر Starlight بناءً على الثيم المستخرج */
+:root {
+  --sl-color-accent-low: var(--color-accent-900);
+  --sl-color-accent: var(--color-accent-500);
+  --sl-color-accent-high: var(--color-accent-200);
+  --sl-color-white: var(--color-gray-25);
+  --sl-color-gray-1: var(--color-gray-100);
+  --sl-color-gray-2: var(--color-gray-200);
+  --sl-color-gray-3: var(--color-gray-400);
+  --sl-color-gray-4: var(--color-gray-600);
+  --sl-color-gray-5: var(--color-gray-700);
+  --sl-color-gray-6: var(--color-gray-800);
+  --sl-color-black: var(--color-gray-950);
+}
+
+/* تعديلات الوضع المضيء لضمان وضوح النص */
+:root[data-theme='light'] {
+  --sl-color-accent-low: var(--color-accent-200);
+  --sl-color-accent: var(--color-accent-600);
+  --sl-color-accent-high: var(--color-accent-900);
+  --sl-color-white: var(--color-gray-950);
+  --sl-color-gray-1: var(--color-gray-800);
+  --sl-color-gray-2: var(--color-gray-700);
+  --sl-color-gray-3: var(--color-gray-500);
+  --sl-color-gray-4: var(--color-gray-300);
+  --sl-color-gray-5: var(--color-gray-200);
+  --sl-color-gray-6: var(--color-gray-100);
+  --sl-color-black: var(--color-gray-25);
+}

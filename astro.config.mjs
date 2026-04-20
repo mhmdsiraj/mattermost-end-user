@@ -1,19 +1,29 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
-import { size } from "astro:schema";
+
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [
     starlight({
       title: "Mattermost",
+      logo: {
+        src: "./src/assets/logo-light.jpg",
+        alt: "Mattermost Logo",
+      },
       social: [
         {
           icon: "github",
           label: "GitHub",
           href: "https://github.com/withastro/starlight",
         },
+      ],
+      customCss: [
+        "./src/styles/global.css",
+        "@fontsource/ibm-plex-sans-arabic/400.css",
+        "@fontsource/ibm-plex-sans-arabic/700.css",
       ],
       sidebar: [
         {
@@ -36,10 +46,6 @@ export default defineConfig({
             {
               label: "تثبيت تطبيق سطح المكتب",
               slug: "access-your-workspace/install-the-desktop-app",
-            },
-            {
-              label: "تثبيت تطبيق iOS المحمول",
-              slug: "access-your-workspace/install-the-ios-mobile-app",
             },
             {
               label: "تثبيت تطبيق Android المحمول",
@@ -203,7 +209,7 @@ export default defineConfig({
                   slug: "messaging-collaboration/communicate-with-messages-and-threads/organize-conversations",
                 },
                 {
-                  label: "Mark messages as unread",
+                  label: "تمييز الرسائل كغير مقروءة",
                   slug: "messaging-collaboration/communicate-with-messages-and-threads/mark-messages-as-unread",
                 },
                 {
@@ -241,6 +247,10 @@ export default defineConfig({
                 {
                   label: "تعيين أولوية الرسالة",
                   slug: "messaging-collaboration/communicate-with-messages-and-threads/set-message-priority",
+                  badge: {
+                    text: "Stop",
+                    variant: "danger",
+                  },
                 },
                 {
                   label: "الإشارة للأشخاص",
@@ -491,4 +501,8 @@ export default defineConfig({
       },
     }),
   ],
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
