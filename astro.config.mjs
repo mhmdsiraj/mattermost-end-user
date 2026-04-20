@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import { size } from "astro:schema";
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,6 +24,7 @@ export default defineConfig({
               slug: "end-user-guide/end-user-guide",
             },
           ],
+          collapsed: true,
         },
         {
           label: "الوصول إلى مساحة عملك",
@@ -52,6 +54,7 @@ export default defineConfig({
               slug: "access-your-workspace/log-out-of-mattermost",
             },
           ],
+          collapsed: true,
         },
         {
           label: "التعاون في المراسلة",
@@ -76,6 +79,7 @@ export default defineConfig({
                   slug: "messaging-collaboration/organize-using-teams/team-keyboard-shortcuts",
                 },
               ],
+              collapsed: true,
             },
             {
               label: "التنظيم باستخدام مجموعات المستخدمين المخصصة",
@@ -173,6 +177,7 @@ export default defineConfig({
                   slug: "messaging-collaboration/collaborate-within-channels/archive-and-unarchive-channels",
                 },
               ],
+              collapsed: true,
             },
             {
               label: "التواصل باستخدام الرسائل والمواضيع",
@@ -246,6 +251,7 @@ export default defineConfig({
                   slug: "messaging-collaboration/communicate-with-messages-and-threads/share-files-in-messages",
                 },
               ],
+              collapsed: true,
             },
             {
               label: "التعاون داخل Microsoft Teams",
@@ -263,6 +269,7 @@ export default defineConfig({
                   slug: "messaging-collaboration/keyboard-shortcuts/keyboard-accessibility",
                 },
               ],
+              collapsed: true,
             },
             {
               label: "توسيع Mattermost باستخدام عمليات الدمج",
@@ -310,6 +317,7 @@ export default defineConfig({
               slug: "workflow-automation/interact-with-collaborative-playbooks",
             },
           ],
+          collapsed: true,
         },
         {
           label: "مشاركة الصوت والشاشة",
@@ -319,6 +327,7 @@ export default defineConfig({
               slug: "audio-and-screensharing/audio-and-screensharing",
             },
           ],
+          collapsed: true,
         },
         {
           label: "إدارة المشاريع والمهام",
@@ -364,6 +373,7 @@ export default defineConfig({
               slug: "project-and-task-management/boards-settings",
             },
           ],
+          collapsed: true,
         },
         {
           label: "وكلاء الذكاء الاصطناعي",
@@ -377,6 +387,7 @@ export default defineConfig({
               slug: "ai-agents/agents-context-management",
             },
           ],
+          collapsed: true,
         },
         {
           label: "تخصيص تفضيلاتك",
@@ -421,6 +432,7 @@ export default defineConfig({
                   slug: "customize-your-preferences/manage-your-notifications/manage-your-channelspecific-notifications",
                 },
               ],
+              collapsed: true,
             },
             {
               label: "تخصيص سمة Mattermost الخاصة بك",
@@ -467,6 +479,7 @@ export default defineConfig({
               slug: "customize-your-preferences/connect-to-multiple-workspaces",
             },
           ],
+          collapsed: true,
         },
       ],
       locales: {
