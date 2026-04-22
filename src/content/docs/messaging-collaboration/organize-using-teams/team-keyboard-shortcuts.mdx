@@ -1,39 +1,37 @@
 ---
-title: Team keyboard shortcuts
+title:  اختصارات لوحة المفاتيح للفرق
 ---
 
-<Aside type="note">
-[\|plans-img-yellow\|](##SUBST##|plans-img-yellow|) Available on [Entry,
-Professional, Enterprise, and Enterprise Advanced
-plans](https://mattermost.com/pricing/)
-</Aside>
+> **متاح في الخطط:** Entry، Professional، Enterprise، و Enterprise Advanced.
 
+تساعدك اختصارات لوحة المفاتيح على استخدام لوحة المفاتيح بكفاءة أكبر وسرعة أعلى عند التنقل بين فرق Mattermost، سواء كنت تستخدم متصفح الويب أو تطبيق سطح المكتب.
 
-Keyboard shortcuts help you make a more efficient use of your keyboard
-when navigating Mattermost teams in a web browser or the desktop app.
+---
 
-<Aside type="note">
-See a list of available keyboard shortcuts any time by pressing `Ctrl`
-`/` on <span dir="ltr"><span dir="ltr"><span dir="ltr"><span dir="ltr"><span dir="ltr">Windows</span></span></span></span></span> or Linux, pressing `⌘` `/` on Mac, or using the
-`/shortcuts` slash command.
-</Aside>
+### 💡 نصيحة سريعة
+يمكنك عرض قائمة بجميع الاختصارات المتاحة في أي وقت عبر القيام بأحد الإجراءات التالية:
+* **Windows و Linux:** اضغط على `Ctrl` + `/`
+* **Mac:** اضغط على `⌘` + `/`
+* **عبر الدردشة:** اكتب الأمر `/shortcuts` وأرسله.
 
+---
 
-# Team navigation
+## التنقل بين الفرق
 
-The following keyboard shortcuts are supported in all
-`supported browsers <deployment-guide/software-hardware-requirements:software requirements>`
-and in the Mattermost Desktop App.
+الاختصارات التالية مدعومة في جميع [المتصفحات المتوافقة](deployment-guide/software-hardware-requirements:software-requirements) وفي تطبيق Mattermost لسطح المكتب.
 
-| On <span dir="ltr"><span dir="ltr"><span dir="ltr"><span dir="ltr"><span dir="ltr">Windows</span></span></span></span></span> & Linux   | On Mac          | Description                    |
-|----------------------|-----------------|--------------------------------|
-| `Ctrl` `Alt` `↑`     | `⌘` `⌥` `↑`     | Navigate to the previous team. |
-| `Ctrl` `Alt` `↓`     | `⌘` `⌥` `↓`     | Navigate to the next team.     |
-| `Ctrl` `Alt` `1`-`9` | `⌘` `⌥` `1`-`9` | Navigate to a specific team.   |
+| نظام Windows و Linux | نظام Mac | الوصف |
+| :--- | :--- | :--- |
+| `Ctrl` + `Alt` + `↑` | `⌘` + `⌥` + `↑` | الانتقال إلى الفريق السابق. |
+| `Ctrl` + `Alt` + `↓` | `⌘` + `⌥` + `↓` | الانتقال إلى الفريق التالي. |
+| `Ctrl` + `Alt` + `1-9` | `⌘` + `⌥` + `1-9` | الانتقال مباشرة إلى فريق معين (حسب ترتيبه). |
 
-<Aside type="note">
-Though Mattermost keyboard shortcuts support standard languages and
-keyboard layouts, they may not work if you use keymapping that
-overwrites default browser shortcuts.
-</Aside>
+---
 
+### ⚠️ ملاحظة حول توافق لوحة المفاتيح
+على الرغم من أن اختصارات Mattermost تدعم اللغات وتخطيطات لوحة المفاتيح القياسية، إلا أنها قد لا تعمل بشكل صحيح إذا كنت تستخدم برامج "إعادة تعيين المفاتيح" (Keymapping) التي تتعارض مع اختصارات المتصفح الافتراضية.
+
+---
+
+**هل تريد معرفة المزيد؟**
+راجع دليل [تنظيم العمل باستخدام الفرق](/end-user-guide/collaborate/organize-using-teams) لتعلم كيفية إدارة مساحات عملك بفعالية.

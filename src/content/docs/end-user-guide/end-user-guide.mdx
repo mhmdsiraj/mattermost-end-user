@@ -1,56 +1,50 @@
 ---
-title: End User Guide
+title: دليل المستخدم النهائي
 ---
 
-If you're using Mattermost to connect and collaborate, build repeatable,
-automated processes, and making Mattermost match your work preferences,
-this Mattermost end user product documentation is for you.
+إذا كنت تستخدم Mattermost للتواصل والتعاون، وبناء عمليات مؤتمتة وقابلة للتكرار، وترغب في تخصيص المنصة لتناسب تفضيلات عملك، فإن هذا الدليل مخصص لك.
 
-In this documentation, you'll learn about using Mattermost. Your
-Mattermost system admin has deployed Mattermost for your organization. A
-live Mattermost instance is ready for you to log into using your user
-credentials. Your Mattermost workspace is where you'll send and receive
-messages, see activity notifications, create, run, and participate in
-playbook runs, and where you'll customize look and feel through
-workspace preferences.
+في هذه الوثائق، ستتعلم كيفية استخدام Mattermost بفعالية. لقد قام مسؤول النظام في مؤسستك بالفعل بتجهيز المنصة، وهي الآن جاهزة لتسجيل دخولك باستخدام بيانات الاعتماد الخاصة بك. مساحة عمل Mattermost هي المكان الذي ستتبادل فيه الرسائل، وتتابع تنبيهات النشاط، وتدير المشاريع، وتخصص شكل الواجهة وتجربة الاستخدام عبر التفضيلات الشخصية.
 
-<div class="toctree" maxdepth="1" hidden="" titlesonly="">
+---
 
-Access Your Workspace \</end-user-guide/access/access-your-workspace\>
-Messaging Collaboration \</end-user-guide/messaging-collaboration\>
-Workflow Automation \</end-user-guide/workflow-automation\> Audio and
-Screensharing \</end-user-guide/collaborate/audio-and-screensharing\>
-Project and Task Management \</end-user-guide/project-task-management\>
-AI Agents \</end-user-guide/agents\> Customize Your Preferences
-\</end-user-guide/preferences\>
+## 📚 أقسام الدليل
 
-</div>
+استكشف الأقسام أدناه لتعلم كيفية تحقيق أقصى استفادة من Mattermost:
 
-- `Access Your Workspace </end-user-guide/access/access-your-workspace>` -
-  Learn how to access Mattermost using web, desktop, or mobile apps, and
-  authenticate with your credentials.
-- `Messaging Collaboration </end-user-guide/messaging-collaboration>` -
-  Learn how to use Mattermost to connect and collaborate with your
-  teammates.
-- `Workflow Automation </end-user-guide/workflow-automation>` - Learn
-  how to use Mattermost Playbooks to build repeatable processes, move
-  faster, and make fewer mistakes with checklist-based automations.
-- `Audio and Screensharing </end-user-guide/collaborate/audio-and-screensharing>` -
-  Learn about Mattermost's self-hosted audio calls plugin with screen
-  sharing and the many video conferencing integrations Mattermost
-  supports.
-- `Project and Task Management </end-user-guide/project-task-management>` -
-  Learn how to use Mattermost Boards to coordinate operational work with
-  Kanban-style planning.
-- `AI Agents </end-user-guide/agents>` - Learn how to use AI agents to
-  help you make decisions, find information, and automate repetative
-  tasks.
-- `Customize Your Preferences </end-user-guide/preferences>` - Learn how
-  to make Mattermost match the way you prefer to work.
+*   **[الوصول إلى مساحة عملك](/end-user-guide/access/access-your-workspace)**  
+    تعلم كيفية الوصول إلى Mattermost باستخدام المتصفح، أو تطبيقات سطح المكتب، أو تطبيقات الهاتف المحمول، وكيفية تسجيل الدخول بأمان.
 
-![An example of the Mattermost screen that includes teams, the channel sidebar, an active conversation in the center pane, reply threads in the right-hand pane.](../../../images/Channels_Hero.png)
+*   **[التعاون والمراسلة](/end-user-guide/messaging-collaboration)**  
+    اكتشف كيفية استخدام Mattermost للتواصل والتعاون اللحظي مع زملائك في الفريق.
 
-> [!TIP]
-> From Mattermost v9.1, when using Mattermost in a browser or the
-> desktop app, you can resize both the channel sidebar and right-hand
-> sidebar panes!
+*   **[أتمتة سير العمل](/end-user-guide/workflow-automation)**  
+    تعلم كيفية استخدام **Mattermost Playbooks** لبناء عمليات متكررة، والعمل بسرعة أكبر، وتقليل الأخطاء باستخدام الأتمتة المستندة إلى قوائم المهام (Checklists).
+
+*   **[المكالمات الصوتية ومشاركة الشاشة](/end-user-guide/collaborate/audio-and-screensharing)**  
+    تعرف على ميزات المكالمات الصوتية المدمجة ومشاركة الشاشة، بالإضافة إلى تكاملات منصات الفيديو التي يدعمها Mattermost.
+
+*   **[إدارة المشاريع والمهام](/end-user-guide/project-task-management)**  
+    تعلم كيفية استخدام **Mattermost Boards** لتنسيق العمل العملياتي باستخدام لوحات التخطيط بنمط "كانبان" (Kanban).
+
+*   **[وكلاء الذكاء الاصطناعي](/end-user-guide/agents)**  
+    اكتشف كيفية الاستفادة من وكلاء الذكاء الاصطناعي لمساعدتك في اتخاذ القرارات، والبحث عن المعلومات، وأتمتة المهام المتكررة.
+
+*   **[تخصيص تفضيلاتك](/end-user-guide/preferences)**  
+    اجعل Mattermost يبدو ويعمل بالطريقة التي تفضلها من خلال تخصيص الإشعارات، والمظهر، والإعدادات الأمنية.
+
+---
+
+## 🖼️ نظرة عامة على الواجهة
+
+يوضح المثال أدناه واجهة Mattermost التي تتضمن الفرق، شريط القنوات الجانبي، المحادثة النشطة في المنتصف، وسلاسل الردود (Threads) في الجانب الأيمن.
+
+![مثال لواجهة Mattermost تتضمن الفرق والقنوات والمحادثات النشطة وسلاسل الردود.](../../../images/Channels_Hero.png)
+
+> **💡 نصيحة احترافية**
+> بدءاً من إصدار Mattermost v9.1، يمكنك تغيير حجم كل من شريط القنوات الجانبي وشريط الردود الأيمن عند استخدام المتصفح أو تطبيق سطح المكتب للحصول على مساحة رؤية أفضل!
+
+---
+
+**هل أنت مستعد للبدء؟**  
+انتقل مباشرة إلى قسم [الوصول إلى مساحة عملك](/end-user-guide/access/access-your-workspace) لتسجيل دخولك الأول.

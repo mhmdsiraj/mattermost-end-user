@@ -1,121 +1,65 @@
 ---
-title: Team settings
+title: "إعدادات الفريق"
+description: "دليل شامل لجميع إعدادات الفريق في Mattermost، بما في ذلك إعدادات المعلومات، والوصول، والمراسلة."
 ---
 
-<Aside type="note">
-[\|plans-img-yellow\|](##SUBST##|plans-img-yellow|) Available on [Entry,
-Professional, Enterprise, and Enterprise Advanced
-plans](https://mattermost.com/pricing/)
-</Aside>
 
+> **متاح في الخطط:** Entry، Professional، Enterprise، و Enterprise Advanced.
 
-Team settings enable system and team administrators to adjust settings
-applied to a specific team. Using Mattermost in a web browser or the
-desktop app, select the team name to access **Team Settings**.
+تسمح إعدادات الفريق لمسؤولي النظام ومسؤولي الفرق بتعديل التفضيلات الخاصة بفريق معين. للوصول إلى هذه الإعدادات عبر المتصفح أو تطبيق سطح المكتب، اضغط على اسم الفريق ثم اختر **إعدادات الفريق (Team Settings)**.
 
-![Access team settings from the team name.](../../../../images/team-settings.png)
+![الوصول إلى إعدادات الفريق من اسم الفريق](../../../../images/team-settings.png)
 
-# Info settings
+---
 
-Info settings provide configuration options for how teams are displayed
-to users.
+## 1. إعدادات المعلومات (Info Settings)
 
-## Team name
+توفر إعدادات المعلومات خيارات لتهيئة كيفية ظهور الفريق للمستخدمين.
 
-Your **Team Name** is displayed on the login screen, and in the top of
-the channel sidebar for your team.
+### اسم الفريق (Team Name)
+يظهر **اسم الفريق** في شاشة تسجيل الدخول وفي الجزء العلوي من شريط القنوات الجانبي.
+* **القيود:** يمكن أن يحتوي الاسم على أي أحرف أو أرقام أو رموز.
+* **الطول:** يجب أن يتراوح بين 2 إلى 64 حرفاً.
+* **ملاحظة:** الأسماء حساسة لحالة الأحرف (في اللغة الإنجليزية) ولا تدعم [بعض رموز يونيكود](https://www.w3.org/TR/unicode-xml/#Charlist).
 
-Team names can contain any letters, numbers, or symbols, must be 2 - 64
-characters in length, and are case-sensitive.
+### وصف الفريق (Team Description)
+يظهر **وصف الفريق** عند عرض قائمة الفرق المتاحة للانضمام، وفي "نص التلميح" (Tooltip) عند تمرير الفأرة فوق اسم الفريق في الشريط الجانبي.
+* **الطول:** يمكنك إدخال وصف يصل إلى 50 حرفاً كحد أقصى.
 
-<Aside type="note">
-Team names don't support [some unicode
-characters](https://www.w3.org/TR/unicode-xml/#Charlist).
-</Aside>
+### أيقونة الفريق (Team Icon)
+تظهر **أيقونة الفريق** في الشريط الجانبي للفرق. افتراضياً، تحتوي الأيقونة على أول حرفين من اسم الفريق.
 
+**لتخصيص الأيقونة:**
+1. انتقل إلى **إعدادات الفريق**.
+2. اختر خيار **تعديل (Edit)** بجانب أيقونة الفريق.
+![إدارة أيقونة الفريق من إعدادات الفريق](../../../../images/edit-team-icon.png)
+3. اختر صورة بصيغة BMP أو JPG أو PNG. (نصح باستخدام صور مربعة بخلفية ملونة ثابتة، حيث تظهر الخلفية الشفافة باللون الأبيض).
+4. اضغط على **حفظ (Save)**.
 
-## Team description
+> **نصيحة:** إذا كنت تريد العودة للأيقونة الافتراضية، اختر **إزالة الصورة (Remove image)**.
 
-Your **Team Description** is displayed when viewing the list of teams
-available to join and in the tooltip when hovering over the team name in
-the team sidebar.
+---
 
-You can enter a description up to 50 characters in length.
+## 2. إعدادات الوصول (Access Settings)
 
-<Aside type="note">
-Team descriptions don't support [some unicode
-characters](https://www.w3.org/TR/unicode-xml/#Charlist).
-</Aside>
+تسمح إعدادات الوصول بالتحكم في من يمكنه الانضمام إلى الفريق.
 
+### المستخدمون بنطاق بريد إلكتروني محدد
+يمكن للمسؤولين حصر الانضمام للفريق بناءً على نطاق البريد الإلكتروني (Domain). 
+* **كيفية الإعداد:** قم بتفعيل هذا الخيار وأدخل النطاقات المعتمدة (مثال: `company.com`). افصل بين النطاقات المتعددة بمسافة أو فاصلة.
+* **ملاحظة هامة:** هذا الإعداد يمنع "الانضمام" فقط. المستخدمون الذين انضموا بالفعل قبل تفعيل هذا الإعداد لن يتم استبعادهم، كما يمكن للأعضاء تغيير بريدهم لاحقاً دون قيود.
 
-## Team icon
+> **تنبيه:** لضمان فعالية هذا الخيار، يجب تفعيل [إعداد التحقق من البريد الإلكتروني](administration-guide/configure/authentication-configuration-settings:require-email-verification) في لوحة تحكم النظام.
 
-A **Team Icon** displays in the team sidebar. By default, the team icon
-contains the first two letters of the team name.
+### المستخدمون على هذا الخادم
+يمكن للمسؤولين إدراج الفريق ضمن قائمة "الفرق التي يمكنك الانضمام إليها".
+* عند تفعيل هذا الخيار، سيتمكن أي مستخدم لديه حساب على هذا الخادم من رؤية الفريق والانضمام إليه يدوياً عبر صفحة اختيار الفرق أو بالضغط على أيقونة **(+)** في شريط الفرق.
 
-To customize the team icon:
+### كود الدعوة (Invite Code)
+يُستخدم **كود الدعوة** كجزء من الرابط الذي ترسلونه لدعوة الأعضاء الجدد. 
+* يمكنك الضغط على **إعادة توليد (Regenerate)** لإنشاء رابط دعوة جديد، مما سيؤدي إلى إبطال مفعول أي روابط دعوة قديمة تم إنشاؤها سابقاً.
 
-1.  Select **Team Settings**.
-2.  Select the Team Icon **Edit** option.
+---
 
-![Manage the team icon from Team Settings.](../../../../images/edit-team-icon.png)
-
-3.  Select an icon image in BMP, JPG, or PNG format. We recommend using
-    square images with a solid background color since transparency in
-    PNG icons fills with a white background in the team sidebar.
-4.  Select **Save**.
-
-<Aside type="note">
-When a team icon is configured, select **Remove image** to reset the
-team icon to the default icon containing the first two letters of the
-team name.
-</Aside>
-
-
-# Access settings
-
-Access settings enable the ability to control who can join the team.
-
-## Users with a specific email domain
-
-System and team administrators can limit who can join the team based on
-their email domain. Enable this option to specify approved email
-domains. Separate multiple email domains using spaces, commas, pressing
-`Tab`, or pressing `Enter`.
-
-When enabled, only users that have an email domain from the approved
-domain list is able to join the team. The setting's intent is solely to
-gate joining a team. Once joined, team members will be able to update
-their email to a non-approved domain without any restrictions.
-Additionally, team members who joined prior to approved domains being
-specified won't be removed from the team once approved email domains are
-configured and enforced.
-
-<Aside type="note">
-Mattermost deployments using
-`email authentication <administration-guide/configure/authentication-configuration-settings:enable sign-in with email>`
-must also enable the
-`require email verification configuration setting <administration-guide/configure/authentication-configuration-settings:require email verification>`
-for domain restrictions to be effective.
-</Aside>
-
-
-## Users on this server
-
-System and team administrators can include the team in a list of teams
-to join for new Mattermost users who aren't yet members of a team.
-Enable this option to allow any user with a Mattermost account on this
-instance to join this team from the **Teams you can join** page.
-
-<Aside type="note">
-When you enable this option, users looking for more teams to join will
-also see this team in the list when they select the
-[\|plus\|](##SUBST##|plus|) icon in the team sidebar.
-</Aside>
-
-
-## Invite code
-
-The **Invite Code** is used as part of the URL in team invitation links.
-Select **Regenerate** to create a new invitation link and invalidate any
-previous link.
+**هل تحتاج للمزيد؟**
+راجع دليل [إدارة الأعضاء](/end-user-guide/collaborate/manage-members) أو [تنظيم الفرق](/end-user-guide/collaborate/organize-using-teams).
