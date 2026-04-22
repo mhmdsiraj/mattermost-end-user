@@ -49,8 +49,38 @@
   --sl-color-gray-4: var(--color-gray-600);
   --sl-color-gray-5: var(--color-gray-700);
   --sl-color-gray-6: var(--color-gray-800);
-  --sl-color-black: var(--color-gray-950);
+  --sl-color-black: var(--color-gray-25);
 }
+
+/* FAIcon Styles */
+svg.fa-icon {
+  display: inline-block !important;
+  height: 1em !important;
+  width: auto !important;
+  vertical-align: middle !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* كلاس مخصص للصور داخل التوثيق للحفاظ على الحجم الخاص بلقطات الشاشة الخاصة بالهاتف */
+.img-phone-screenshots {
+  width: 310px !important;
+  height: 620px !important;
+  max-width: 100% !important;
+  display: block;
+  margin: 1.5rem auto !important;
+  object-fit: contain;
+}
+
+/* كلاص مخصص للصور الخاصة بلقطات الشاشة من الكمبيوتر */
+.img-computer-screenshots {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: block;
+  margin: 1.5rem auto !important;
+  object-fit: contain;
+}
+
 
 /* تعديلات الوضع المضيء لضمان وضوح النص */
 :root[data-theme='light'] {
