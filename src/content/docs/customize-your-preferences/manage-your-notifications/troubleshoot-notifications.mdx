@@ -1,3 +1,157 @@
 ---
 title: "استكشاف أخطاء الإشعارات وإصلاحها"
+description: "دليل لحل مشاكل الإشعارات في ماترموست عبر فحص الإعدادات في التطبيق، المتصفح، ونظام التشغيل لضمان وصول التنبيهات إليك."
 ---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import FAIcon from "../../../../components/FAIcon.astro";
+
+تعتمد إشعارات ماترموست التي تتلقاها على تفضيلاتك داخل التطبيق، والعميل الذي تستخدمه، وإعدادات نظام التشغيل الخاص بك.
+
+## أرسل لنفسك إشعار اختبار
+
+بدءاً من Mattermost v10.3، يمكنك إرسال إشعار اختبار لنفسك:
+
+1. انتقل إلى **Settings** <FAIcon name="gear" />.
+2. انتقل إلى خيارات **Notifications**.
+3. تحت قسم **Troubleshooting notifications**، اختر **Send a test notification**.
+
+إذا كانت الإشعارات تعمل، فستتلقى رسالة مباشرة من بوت النظام (system-bot) تؤكد ذلك. إذا لم تصلك الرسالة، فاتبع خطوات استكشاف الأخطاء أدناه.
+
+## تحقق من تفضيلات ماترموست
+
+تأكد أولاً من تفعيل الإشعارات داخل إعدادات ماترموست.
+
+<Tabs>
+  <TabItem label="سطح المكتب">
+    1. اختر **Settings** <FAIcon name="gear" /> في الزاوية العلوية اليمنى.
+    2. اختر **Desktop and mobile notifications**.
+    3. إذا كان خيار **Send notifications for** مضبوطاً على **Nothing**، فهذا يعني أن الإشعارات معطلة. اختر **All new messages** أو **Mentions, direct messages, and group messages** بدلاً من ذلك.
+
+    ![check desktop notifications](https://docs.mattermost.com/_images/desktop-notification-check.gif)
+
+  </TabItem>
+  <TabItem label="الويب">
+    1. اختر **Settings**<FAIcon name="gear" /> في الزاوية العلوية اليمنى.
+    2. اختر **Desktop and mobile notifications**.
+    3. تأكد من أن خيار **Send notifications for** ليس مضبوطاً على **Nothing**.
+  </TabItem>
+  <TabItem label="الجوال">
+    1. اضغط على صورة ملفك الشخصي في الزاوية السفلية اليمنى.
+    2. اضغط على **Settings** <FAIcon name="gear" />.
+    3. اضغط على **Notifications > Push Notifications**.
+    4. تأكد من اختيار **All new messages** أو **Mentions, direct messages, and group messages**.
+    5. تحت **Trigger push notifications when…**، اختر **Online, away or offline** لتلقي الإشعارات دائماً.
+  </TabItem>
+</Tabs>
+
+## تحقق من إعدادات عميل ماترموست
+
+<Tabs>
+  <TabItem label="سطح المكتب">
+    تأكد من تفعيل الإشعارات في اتصال خادم ماترموست الخاص بك:
+    1. اختر خيار خادم ماترموست في الزاوية العلوية اليسرى، ثم قم بتحرير تفاصيل الخادم.
+    2. تحت **Permissions**، قم بتفعيل **Notifications** واحفظ التغييرات.
+
+    ![check server notifications](https://docs.mattermost.com/_images/desktop-server-notification-check.gif)
+
+  </TabItem>
+  <TabItem label="الويب">
+    يجب عليك منح أذونات الإشعارات لماترموست في المتصفح. اختر المتصفح الخاص بك أدناه:
+
+    <Tabs>
+      <TabItem label="Chrome">
+        1. من قائمة Chrome، اختر **Settings**.
+        2. اختر **Privacy and Security > Site settings**.
+        3. تحت **Permissions**، اختر **Notifications**.
+        4. تأكد من تفعيل **Sites can ask to send notifications**، وأضف رابط ماترموست إلى قائمة المسموح لهم.
+      </TabItem>
+      <TabItem label="Edge">
+        1. من قائمة Edge، اختر **Settings**.
+        2. اختر **Cookies and Site Permissions > Notifications**.
+        3. أضف رابط ماترموست إلى قسم **Allow**.
+      </TabItem>
+      <TabItem label="Firefox">
+        1. من قائمة Firefox، اختر **Settings**.
+        2. اختر **Privacy and Security > Permissions**.
+        3. اختر **Settings** بجانب **Notifications** وأضف رابط ماترموست.
+      </TabItem>
+      <TabItem label="Safari">
+        1. من قائمة Safari، اختر **Preferences**.
+        2. اختر **Websites > Notifications**.
+        3. قم بتفعيل الإشعارات لموقع ماترموست الخاص بك.
+      </TabItem>
+    </Tabs>
+
+  </TabItem>
+  <TabItem label="الجوال">
+    تأكد من أن جهازك لا يحظر الإشعارات من إعدادات النظام.
+
+    :::note
+    بدءاً من إصدار الجوال v2.34، إذا كانت الإشعارات معطلة في الجهاز، فستظهر راية في شاشة إعدادات ماترموست مع رابط سريع لإصلاح ذلك.
+    :::
+
+    <Tabs>
+      <TabItem label="Android">
+        1. افتح **إعدادات** الجهاز > **مدير التطبيقات**.
+        2. ابحث عن **Google Play Services** وتأكد من تفعيل الإشعارات له.
+        3. ابحث عن **Mattermost** وفعل الإشعارات له.
+        4. تأكد من أن الجهاز ليس في وضع "عدم الإزعاج" (Do Not Disturb).
+      </TabItem>
+      <TabItem label="iOS">
+        1. افتح **إعدادات** الجهاز > **الإشعارات**.
+        2. ابحث عن **Mattermost**.
+        3. قم بتفعيل **السماح بالإشعارات** واضبط التسليم على **Immediate Delivery**.
+        4. تأكد من عدم تفعيل وضع "عدم الإزعاج" أو "التركيز".
+      </TabItem>
+    </Tabs>
+
+  </TabItem>
+</Tabs>
+
+## تحقق من إعدادات نظام التشغيل
+
+قد يقوم نظام التشغيل بحظر إشعارات ماترموست. اختر نظامك:
+
+<Tabs>
+  <TabItem label="Windows">
+    1. افتح **إعدادات Windows** وانتقل إلى **System > Notifications & actions**.
+    2. تأكد من تفعيل **Get notifications from apps and other senders**.
+    3. ابحث عن Mattermost في القائمة وفعل الإشعارات له.
+    4. تأكد من إيقاف وضع **Do Not Disturb** و **Focus Assist**.
+  </TabItem>
+  <TabItem label="macOS">
+    1. افتح **System Settings > Notifications**.
+    2. تحت **Application Notifications**، تأكد من تفعيل الإشعارات لماترموست.
+    3. تأكد من إيقاف وضع **Focus mode**.
+  </TabItem>
+  <TabItem label="Linux">
+    1. افتح **Settings > Notifications**.
+    2. فعل خيار **Show Pop-up Notifications**.
+    3. تأكد من إيقاف وضع **Do Not Disturb**.
+  </TabItem>
+</Tabs>
+
+## الأسئلة الشائعة
+
+### ما الذي يحدد متى يتم إطلاق إشعار سطح المكتب؟
+
+يتم إطلاق إشعارات سطح المكتب بناءً على شروط محددة. يمكنك مراجعة المخطط الانسيابي أدناه:
+
+![desktop notification chart](https://docs.mattermost.com/_images/desktop_notification_chart.png)
+
+### ما الذي يحدد متى يتم إطلاق إشعار البريد الإلكتروني؟
+
+يتم إطلاق إشعارات البريد الإلكتروني وفقاً للشروط التالية. انقر لتوسيع المخطط الانسيابي.
+
+![triggered email notification](https://docs.mattermost.com/_images/email_notification_chart.png)
+
+### ما الذي يحدد متى يتم إطلاق إشعار الدفع عبر الجوال؟
+
+يتم إطلاق إشعارات الدفع عبر الجوال (Push notifications) وفقاً للشروط التالية. انقر لتوسيع المخطط الانسيابي.
+
+![triggered mobile notification](https://docs.mattermost.com/_images/push_notification_chart.png)
+
+### هل إشعارات الجوال مجانية؟
+
+نعم، إشعارات الدفع (Push notifications) مجانية إذا كنت تستخدم خدمة **TPNS** التي تقدمها ماترموست (بدون اتفاقيات مستوى خدمة للإنتاج) أو إذا قمت بتشغيل وكيل الدفع الخاص بك. لمزيد من ميزات الإنتاج، يوصى بالاشتراك في خطة **Mattermost Professional** لاستخدام خدمة **HPNS**.

@@ -296,11 +296,11 @@ export default defineConfig({
               slug: "workflow-automation/workflow-automation",
             },
             {
-              label: "تعرف على كتيبات اللعب التعاونية",
+              label: "تعرف على كتيبات العمل التعاونية",
               slug: "workflow-automation/learn-about-collaborative-playbooks",
             },
             {
-              label: "العمل مع كتيبات اللعب التعاونية",
+              label: "العمل مع كتيبات العمل التعاونية",
               slug: "workflow-automation/work-with-collaborative-playbooks",
             },
             {
@@ -324,7 +324,7 @@ export default defineConfig({
               slug: "workflow-automation/share-and-collaborate",
             },
             {
-              label: "التفاعل مع كتيبات اللعب التعاونية",
+              label: "التفاعل مع كتيبات العمل التعاونية",
               slug: "workflow-automation/interact-with-collaborative-playbooks",
             },
           ],
@@ -389,6 +389,10 @@ export default defineConfig({
         {
           label: "وكلاء الذكاء الاصطناعي",
           items: [
+            {
+              label:"وكلاء الذكاء الاصطناعي",
+              slug:"ai-agents/ai-agents"
+            },
             {
               label: "نصائح استخدام الوكلاء وأفضل الممارسات",
               slug: "ai-agents/agents-usage-tips-and-best-practices",

@@ -1,3 +1,135 @@
 ---
 title: "الاستيراد والتصدير والترحيل"
+description: "تعلم كيفية استيراد البيانات من أدوات أخرى مثل Asana وNotion وJira وTrello إلى لوحات ماترموست، وكيفية تصدير أرشيف اللوحات."
 ---
+
+## استيراد وتصدير أرشيف اللوحة
+
+إذا كنت ترغب في نسخ لوحتك احتياطياً أو إعادة استخدامها في فريق آخر أو مساحة عمل قناة أخرى، يمكنك تصديرها كملف أرشيف، ثم استيراد ملف الأرشيف في الفريق أو مساحة عمل القناة التي تختارها. تتضمن أرشيفات اللوحات المصدرة والمستوردة جميع محتويات البطاقة مثل الخصائص، والتعليقات، والأوصاف، ومرفقات الصور.
+
+للقيام بذلك، اختر قائمة الخيارات (النقاط الثلاث) الموجودة على يسار زر **New** في أعلى اللوحة. ثم اختر **Export board archive**. قم بتنزيل ملف الأرشيف. انتقل إلى الفريق أو مساحة عمل القناة حيث تريد إضافة اللوحة المصدرة. اختر أيقونة الترس بجانب صورة ملفك الشخصي، ثم اختر **Import archive**. ستتم إضافة اللوحة التي قمت بتصديرها إلى مساحة عمل الفريق أو القناة هذه.
+
+سيقوم خيار **Import archive** باستيراد اللوحة إلى فريقك الحالي. استخدم [أذونات اللوحة](/project-and-task-management/share-and-collaborate#أذونات-اللوحة-board-permissions) للتحكم في الوصول إلى لوحتك المستوردة. سيتم إيقاف تنسيق `.focalboard` القديم في إصدار مستقبلي، ولكنه سيدعم الاستيراد حتى ذلك الحين. حالياً، تبحث نافذة الاستيراد عن ملفات `.boardarchive`. استخدم خيار **Select all files** لاختيار ملفات `.focalboard` لاستيرادها.
+
+## التصدير إلى CSV
+
+لتصدير لوحة إلى ملف CSV، اختر قائمة الخيارات (النقاط الثلاث) الموجودة على يسار زر **New** في أعلى اللوحة. ثم اختر **Export to CSV**.
+
+## الاستيراد والتصدير من تطبيقات أخرى
+
+يمكنك استيراد البيانات من أدوات أخرى لاستخدامها مع اللوحات (Boards).
+
+## الاستيراد من Asana
+
+يقوم تطبيق Node هذا بتحويل أرشيف Asana JSON إلى ملف `.boardarchive`.
+
+1. قم بتسجيل الدخول إلى حسابك في Asana.
+2. اختر القائمة المنسدلة بجانب اسم لوحة Asana. ثم اختر **Export/Print > JSON**. سيؤدي هذا إلى إنشاء ملف أرشيف ستستخدمه في اللوحات.
+3. احفظ الملف محلياً، على سبيل المثال باسم `asana.json`.
+4. افتح نافذة التيرمينال على جهازك المحلي وقم بعمل Clone لمستودع focalboard إلى مجلد محلي:
+
+```bash[terminal]
+git clone https://github.com/mattermost/focalboard focalboard
+```
+
+5. انتقل إلى مجلد `focalboard/webapp`.
+6. قم بتشغيل الأمر `npm install`.
+7. قم بتغيير المسار إلى `focalboard/import/asana`.
+8. قم بتشغيل الأمر `npm install`.
+9. من داخل نفس المجلد، قم بتشغيل الأمر التالي (استبدل `<asana.json>` بمسار ملفك):
+   `npx ts-node importAsana.ts -i <asana.json> -o archive.boardarchive`
+
+سيقوم الأمر بتوليد بيانات مشابهة لما يلي:
+
+```bash
+asana macbook$ npx ts-node importAsana.ts -i ~/Downloads/asana.json -o archive.boardarchive
+Board: 1:1 Meeting Agenda Test
+Card: [READ ME] Instructions for using this project
+Card: [EXAMPLE TASK] Feedback on design team presentation
+Card: [EXAMPLE TASK] Finalize monthly staffing plan
+Card: [EXAMPLE TASK] Review Q2 launch video outline
+Card: [EXAMPLE TASK] Mentor a peer
+
+Found 5 card(s).
+Exported to archive.boardarchive
+```
+
+10. في اللوحات (Boards)، افتح اللوحة التي تريد استخدامها للتصدير.
+11. اختر **Settings > Import archive** واختر `archive.boardarchive`.
+12. اختر **Upload**.
+13. عد إلى لوحتك وتأكد من ظهور بيانات Asana الآن.
+
+إذا لم تظهر بيانات Asana، فسيتم عرض خطأ. يمكنك أيضاً التحقق من ملفات السجل (Logs) بحثاً عن الأخطاء.
+
+### نطاق الاستيراد
+
+حالياً، يقوم السكربت باستيراد جميع البطاقات من لوحة واحدة، بما في ذلك عضويتها في الأقسام (الأعمدة)، والأسماء، والملاحظات.
+
+## الاستيراد من Notion
+
+يقوم تطبيق Node هذا بتحويل ملف Notion CSV وتصدير المارك داون إلى ملف `.boardarchive`.
+
+1. من لوحة Notion، افتح قائمة **...** في الزاوية العلوية اليمنى من اللوحة.
+2. اختر **Export** وحدد **Markdown & CSV** كتنسيق للتصدير.
+3. احفظ الملف الناتج محلياً، وفك ضغط المجلد.
+4. افتح نافذة التيرمينال وقم بعمل Clone لمستودع focalboard:
+
+```bash[terminal]
+git clone https://github.com/mattermost/focalboard focalboard
+```
+
+5. انتقل إلى `focalboard/webapp` وقم بتشغيل `npm install`.
+6. انتقل إلى `focalboard/import/notion` وقم بتشغيل `npm install`.
+7. من نفس المجلد، قم بتشغيل:
+   `npx ts-node importNotion.ts -i <path to the notion-export folder> -o archive.boardarchive`
+8. في اللوحات، اختر **Settings > Import archive** وارفع الملف الناتج.
+
+### نطاق الاستيراد
+
+حالياً، يقوم السكربت باستيراد جميع البطاقات من لوحة واحدة، بما في ذلك خصائصها ومحتوى المارك داون. لا يحفظ تنسيق تصدير Notion أنواع الخصائص، لذا يستورد السكربت حالياً جميع خصائص البطاقات كنوع "Select". يمكنك تغيير النوع بعد الاستيراد.
+
+## الاستيراد من Jira
+
+يقوم تطبيق Node هذا بتحويل تصدير Jira `.XML` إلى ملف `.boardarchive`.
+
+1. افتح البحث المتقدم في Jira، وابحث عن جميع العناصر المراد تصديرها.
+2. اختر **Export > Export XML**.
+3. احفظ الملف محلياً باسم `jira_export.xml`.
+4. اتبع خطوات تثبيت مستودع focalboard المذكورة أعلاه.
+5. انتقل إلى `focalboard/import/jira` وقم بتشغيل `npm install`.
+6. قم بتشغيل:
+   `npx ts-node importJira.ts -i <path-to-jira.xml> -o archive.boardarchive`
+7. في اللوحات، استورد ملف `archive.boardarchive` من الإعدادات.
+
+### القيود المعروفة
+
+يستورد السكربت كل عنصر كبطاقة في لوحة واحدة. لاحظ أن تصدير Jira `.XML` محدود بـ 1000 قضية (Issue) في المرة الواحدة. يتم استيراد المستخدمين كخصائص من نوع "Select". لا يتم حالياً استيراد الخصائص المخصصة والتعليقات والملفات المدمجة.
+
+## الاستيراد من Trello
+
+يقوم تطبيق Node هذا بتحويل أرشيف Trello `.json` إلى ملف `.boardarchive`.
+
+1. من قائمة لوحة Trello، اختر **...Show Menu**.
+2. اختر **More > Print and Export > Export to JSON**.
+3. احفظ الملف محلياً باسم `trello.json`.
+4. اتبع خطوات تثبيت مستودع focalboard.
+5. انتقل إلى `focalboard/import/trello` وقم بتشغيل `npm install`.
+6. قم بتشغيل:
+   `npx ts-node importTrello.ts -i <path-to-trello.json> -o archive.boardarchive`
+7. في اللوحات، استورد الملف من الإعدادات.
+
+### نطاق الاستيراد
+
+يستورد السكربت جميع البطاقات من لوحة واحدة، بما في ذلك عضويتها في القوائم (الأعمدة)، والأسماء، والأوصاف.
+
+## الاستيراد من Todoist
+
+1. قم بزيارة خدمة تصدير بيانات Todoist مفتوحة المصدر على https://darekkay.com/todoist-export/.
+2. من قائمة **Options**، اختر **Export As > JSON (all data)**.
+3. قم بإلغاء تحديد خيار **Archived** إذا كان محدداً.
+4. اختر **Authorize and Backup** واتبع التعليمات.
+5. اتبع خطوات تثبيت مستودع focalboard.
+6. انتقل إلى `focalboard/import/todoist` وقم بتشغيل `npm install`.
+7. قم بتشغيل:
+   `npx ts-node importTodoist.ts -i <path-to-todoist.json> -o archive.boardarchive`
+8. في اللوحات، استورد الملف من الإعدادات.
