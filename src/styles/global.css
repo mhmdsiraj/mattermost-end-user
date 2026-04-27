@@ -1,5 +1,3 @@
-
-/* global.css */
 @layer base, starlight, theme, components, utilities;
 
 @import '@astrojs/starlight-tailwind';
@@ -14,7 +12,7 @@
   --color-accent-25: #F6FEFC;
   --color-accent-50: #EFFEFA;
   --color-accent-100: #c7ffef;
-  --color-accent-200: #90ffe0;
+  --color-accent-200: #00987E;
   --color-accent-300: #51f7cf;
   --color-accent-400: #1de4bb;
   --color-accent-500: #04c8a2;
@@ -37,7 +35,6 @@
   --color-gray-800: #1F2A37;
   --color-gray-900: #111927;
   --color-gray-950: #0D121C;
-
 }
 
 /* تخصيص مظهر Starlight بناءً على الثيم المستخرج */
@@ -53,10 +50,38 @@
   --sl-color-gray-5: var(--color-gray-700);
   --sl-color-gray-6: var(--color-gray-800);
   --sl-color-black: var(--color-gray-950);
- 
-
 }
-/* تغيير لون الخلفية والحد الجانبي للملاحظة */
+
+/* FAIcon Styles */
+svg.fa-icon {
+  display: inline-block !important;
+  height: 1em !important;
+  width: auto !important;
+  vertical-align: middle !important;
+  margin: 0 !important;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* كلاس مخصص للصور داخل التوثيق للحفاظ على الحجم الخاص بلقطات الشاشة الخاصة بالهاتف */
+.img-phone-screenshots {
+  width: 310px !important;
+  height: 620px !important;
+  max-width: 100% !important;
+  display: block;
+  margin: 1.5rem auto !important;
+  object-fit: contain;
+}
+
+/* كلاص مخصص للصور الخاصة بلقطات الشاشة من الكمبيوتر */
+.img-computer-screenshots {
+  width: 80% !important;
+  max-width: 80% !important;
+  display: block;
+  margin: 1.5rem auto !important;
+  object-fit: contain;
+}
+
 
 /* تعديلات الوضع المضيء لضمان وضوح النص */
 :root[data-theme='light'] {
@@ -72,7 +97,3 @@
   --sl-color-gray-6: var(--color-gray-100);
   --sl-color-black: var(--color-gray-25);
 }
-
-
-
-
