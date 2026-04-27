@@ -1,3 +1,79 @@
 ---
-title: "تحويل الرسائل الجماعية إلى قنوات خاصة"
+title: "تحويل الرسائل الجماعية إلى قنوات خاصة "
+description: "تعرف على كيفية تحويل محادثة رسالة جماعية إلى قناة خاصة في Mattermost"
 ---
+
+import { Image } from 'astro:assets';
+import { Aside, Tabs, TabItem, Steps } from '@astrojs/starlight/components';
+import mobileSelectAGroupMessage from '../../../../images/mobile-select-a-group-message.jpg';
+import mobileSelectMoreOptionsForAGroup from '../../../../images/mobile-select-more-options-for-a-group.jpg';
+import mobileSelectViewInfoForAGroup from '../../../../images/mobile-select-view-info-for-a-group.jpg';
+import mobileConvertGroupToPrivateChannel from '../../../../images/mobile-convert-group-to-private-channel.jpg';
+import mobileProvidePrivateChannelNameForTheGroup from '../../../../images/mobile-provide-private-channel-name-for-the-group.jpg';
+
+بدءًا من الإصدار v9.1 من Mattermost، يمكنك تغيير أعضاء محادثتك الجماعية عن طريق تحويل الرسالة الجماعية إلى قناة خاصة. عند تحويل رسالة جماعية إلى خاصة، يتم الحفاظ على سجلها وعضويتها. تظل العضوية في القناة الخاصة عن طريق الدعوة فقط.
+
+<Aside type="note">
+- يمكن لأي عضو في رسالة جماعية موجودة، باستثناء  تحويل تلك الرسالة الجماعية إلى قناة خاصة.
+- سيكون سجل المحادثة مرئيًا لجميع أعضاء القناة.
+- يجب أن يشترك جميع المشاركين في الرسالة الجماعية في عضوية فريق واحد على الأقل.
+</Aside>
+
+<Tabs>
+  <TabItem label="الويب/سطح المكتب (Web/Desktop)" icon="laptop">
+    <Steps>
+    1. حدد اسم الرسالة الجماعية في أعلى اللوحة المركزية للوصول إلى القائمة المنسدلة، ثم حدد **تحويل إلى قناة خاصة (Convert to Private Channel)**.
+    2. حدد الفريق الذي سيتم إنشاء القناة الخاصة الجديدة فيه. سيُطلب منك تحديد فريق عندما يشترك جميع أعضاء الرسالة الجماعية في أكثر من عضوية فريق واحدة.
+    3. أدخل اسم القناة.
+    4. حدد **تحويل إلى قناة خاصة (Convert to private channel)**.
+    </Steps>
+  </TabItem>
+
+  <TabItem label="الهاتف المحمول (Mobile)" icon="mobile">
+    لتحويل رسالة جماعية إلى قناة خاصة:
+
+    <Steps>
+    1. اضغط على الرسالة الجماعية التي تريد تحويلها إلى قناة خاصة.
+
+       <Image 
+         src={mobileSelectAGroupMessage} 
+         alt="حدد المجموعة التي تريد تحويلها." 
+         style={{ height: '450px', width: 'auto', borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }} 
+       />
+
+    2. اضغط على أيقونة **المزيد (More)** الموجودة في الزاوية العلوية اليمنى من التطبيق.
+
+       <Image 
+         src={mobileSelectMoreOptionsForAGroup} 
+         alt="اضغط على المزيد من الخيارات للوصول إلى الخيارات المتاحة للمجموعة." 
+         style={{ height: '450px', width: 'auto', borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }} 
+       />
+
+    3. اضغط على **عرض المعلومات (View info)**.
+
+       <Image 
+         src={mobileSelectViewInfoForAGroup} 
+         alt="اضغط على عرض المعلومات لرؤية معلومات المجموعة الأساسية." 
+         style={{ height: '450px', width: 'auto', borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }} 
+       />
+
+    4. اضغط على **تحويل إلى قناة خاصة (Convert to a Private Channel)**.
+
+       <Image 
+         src={mobileConvertGroupToPrivateChannel} 
+         alt="اضغط على تحويل إلى قناة خاصة لتحويل المجموعة." 
+         style={{ height: '450px', width: 'auto', borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }} 
+       />
+
+    5. أدخل اسم القناة الخاصة.
+
+       <Image 
+         src={mobileProvidePrivateChannelNameForTheGroup} 
+         alt="اكتب اسمًا للقناة الخاصة." 
+         style={{ height: '450px', width: 'auto', borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }} 
+       />
+
+    6. اضغط على **تحويل إلى قناة خاصة (Convert to Private Channel)** للتأكيد.
+    </Steps>
+  </TabItem>
+</Tabs>

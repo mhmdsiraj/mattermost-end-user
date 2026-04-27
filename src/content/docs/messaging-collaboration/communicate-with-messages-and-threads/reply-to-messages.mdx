@@ -1,3 +1,69 @@
 ---
-title: "الرد على الرسائل"
+title: "الرد على الرسائل (Reply to messages)"
+description: "تعرف على كيفية الرد على الرسائل في Mattermost لتنظيم المحادثات في سلاسل."
 ---
+
+import { Tabs, TabItem,Aside } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+
+{/* استيراد الصور */}
+import replyToMessage from '../../../../images/reply-to-message.png';
+import mobileReplyGif from '../../../../images/mobile-reply-to-a-message-using-reply.gif';
+import mobileTapReplyGif from '../../../../images/mobile-reply-to-a-message-by-tapping-on-it.gif';
+import expandSidebarImg from '../../../../images/expand-sidebar.png';
+import collapseSidebarImg from '../../../../images/collapse-sidebar.png';
+
+<Tabs>
+  <TabItem label="الويب/سطح المكتب" icon="laptop">
+    قم بالرد على الرسائل عن طريق اختيار أيقونة **الرد <i class="fa-solid fa-reply"></i> الصفحة الرئيسية**  بجانب نص الرسالة.
+    <Image 
+      src={replyToMessage} 
+      alt="الرد على رسائل Mattermost" 
+      width={600} 
+    />
+  </TabItem>
+
+  <TabItem label="الهاتف المحمول" icon="mobile">
+    اضغط مطولاً على رسالة واختر **رد**، أو ببساطة اضغط عليها للرد.
+
+    <Image 
+      src={mobileReplyGif} 
+      alt="الرد عبر الضغط المطول" 
+      width={300} 
+    />
+
+    <Image 
+      src={mobileTapReplyGif} 
+      alt="الرد عبر الضغط البسيط" 
+      width={300} 
+    />
+  </TabItem>
+</Tabs>
+
+بناءً على كيفية تكوين مسؤول النظام لـ Mattermost، قد تتمكن من [تحرير](/end-user-guide/collaborate/send-messages#تحرير-الرسائل-edit-messages)، و [استعادة](/end-user-guide/collaborate/send-messages#استعادة-نسخة-سابقة-من-رسالة-محررة-restore-a-previous-version-of-an-edited-message)، و [حذف](/end-user-guide/collaborate/send-messages#حذف-الرسائل-delete-messages) الرسائل بعد إرسالها.
+
+<Aside type="note"> 
+   من السهل العودة إلى رسالة قيد التنفيذ باستخدام مسودات الرسائل العالمية. يمكنك العثور على جميع مسودات رسائلك في عرض **المسودات** المتاح في أعلى الشريط الجانبي للقناة. راجع وثائق [مسودات الرسائل](/end-user-guide/collaborate/send-messages#مسودات-الرسائل-draft-messages) لمزيد من التفاصيل.
+ </Aside>
+
+
+
+## تنظيم المناقشات في سلاسل 
+
+عند الرد على الرسائل، يتم [تنظيم هذه الردود في سلسلة مناقشة](/messaging-collaboration/communicate-with-messages-and-threads/organize-conversations/). المناقشات المتسلسلة سهلة المتابعة وتسمح بإجراء محادثات متوازية متعددة في نفس الوقت دون ارتباك.
+
+باستخدام Mattermost في متصفح الويب أو تطبيق سطح المكتب، تظهر الردود مزاحة قليلاً للداخل في اللوحة المركزية للإشارة إلى أنها رسائل تابعة لرسالة أصلية. يؤدي اختيار رابط الرد إلى فتح شريط جانبي في الجهة اليمنى في متصفح الويب وتطبيق سطح المكتب. لتوسيع الشريط الجانبي الأيمن إلى عرضه الكامل، اختر أيقونة **توسيع** التي تحتوي على سهمين في أعلى الشريط الجانبي.
+
+<Image 
+  src={expandSidebarImg} 
+  alt="توسيع الشريط الجانبي" 
+  width={600} 
+/>
+
+لتصغير الشريط الجانبي الأيمن إلى عرضه الأصلي، اختر نفس أيقونة **طي**.
+
+<Image 
+  src={collapseSidebarImg} 
+  alt="طي الشريط الجانبي" 
+  width={600} 
+/>
