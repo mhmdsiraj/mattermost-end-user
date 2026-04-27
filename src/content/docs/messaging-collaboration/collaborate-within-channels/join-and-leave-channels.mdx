@@ -1,105 +1,95 @@
 ---
-title: "الانضمام إلى القنوات ومغادرتها (Join and leave channels)"
+title: "الانضمام إلى القنوات ومغادرتها "
 description: "تعرف على كيفية الانضمام إلى القنوات العامة والخاصة في Mattermost وكيفية مغادرتها"
 ---
 
+import { Tabs, TabItem, Steps, Aside, Badge } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
 
+{/* استيراد الأصول المرئية بمساراتها الصحيحة */}
+import browseChannels from '../../../../images/browse-channels.png';
+import joinChannels from '../../../../images/join-channels.png';
+import mobileSelectChannel from '../../../../images/mobile-select-a-channel.jpg';
+import mobileBrowsePublic from '../../../../images/mobile-browse-public-channels.jpg';
+import mobileMoreOptions from '../../../../images/mobile-select-more-options-for-a-channel.jpg';
+import mobileViewInfo from '../../../../images/mobile-select-view-info-for-a-channel.jpg';
+import mobileConfirmLeave from '../../../../images/mobile-confirm-leave-a-channel.jpg';
 
-## الانضمام إلى قناة (Join a channel)
+### الانضمام إلى قناة (Join a channel)
 
 القنوات إما **عامة** أو **خاصة**.
 
-- يتم تحديد القنوات **العامة** بأيقونة **الكرة الأرضية** [\|globe\|](##SUBST##|globe|). يمكن لأي شخص في الفريق الانضمام إلى قناة عامة.
-- تُستخدم القنوات **الخاصة** عادةً للمواضيع الحساسة، ويتم تحديدها بأيقونة **القفل** [\|lock\|](##SUBST##|lock|). يجب أن يتم دعوتك إلى القنوات الخاصة من قبل عضو آخر في القناة.
+- يتم تحديد القنوات **العامة** بأيقونة **الكرة الأرضية**. يمكن لأي شخص في الفريق الانضمام إليها.
+- تُستخدم القنوات **الخاصة** للمواضيع الحساسة، ويتم تحديدها بأيقونة **القفل**. يجب أن تتم دعوتك إليها من قبل عضو آخر.
 
-:::note
-للانضمام إلى قناة خاصة، يجب أن يتم إضافتك إلى القناة من قبل عضو في تلك القناة.
-:::
+<Aside type="note">
+للانضمام إلى قناة خاصة، يجب أن يتم إضافتك يدوياً من قبل عضو موجود داخل تلك القناة.
+</Aside>
 
-للانضمام إلى قناة عامة:
+#### كيفية الانضمام إلى قناة عامة:
 
-<div class="tab">
+<Tabs>
+  <TabItem label="الويب/سطح المكتب" icon="laptop">
+    <Steps>
+    1. حدد زر **إضافة قنوات (Add channels)** في الشريط الجانبي، ثم اختر **تصفح القنوات (Browse Channels)**.
+       
+       بدلاً من ذلك، يمكنك الضغط على أيقونة **الزائد (+)** في أعلى الشريط الجانبي واختيار نفس الخيار.
+       <Image src={browseChannels} alt="Browse Channels" style={{ display: 'block', margin: '1rem auto', borderRadius: '8px' }} />
 
-الويب/سطح المكتب (Web/Desktop)
+    2. حدد **انضمام (Join)** بجانب القناة التي ترغب في دخولها.
+       <Image src={joinChannels} alt="Join Channel" style={{ display: 'block', margin: '1rem auto', borderRadius: '8px' }} />
+    </Steps>
+  </TabItem>
 
-1. حدد زر **إضافة قنوات (Add channels)** في الشريط الجانبي للقناة، ثم حدد **تصفح القنوات (Browse Channels)**.
+  <TabItem label="الهاتف المحمول" icon="mobile">
+    <Steps>
+    1. اضغط على أيقونة **الزائد (+)** في الزاوية العلوية اليمنى.
+       <Image src={mobileSelectChannel} alt="Mobile Add" style={{ height: '450px', width: 'auto', borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto' }} />
 
-> <img src="../../images/add-channels-button.png" width="400" alt="يمكنك تصفح القنوات باستخدام زر إضافة قنوات" />
->
-> بدلاً من ذلك، يمكنك تحديد [\|plus\|](##SUBST##|plus|) في أعلى الشريط الجانبي للقناة، ثم تحديد **تصفح القنوات (Browse Channels)**.
->
-> ![يمكنك تصفح القنوات المتاحة للانضمام إليها باستخدام خيار + في أعلى الشريط الجانبي للقناة.](../../../../images/browse-channels.png)
+    2. اضغط على **تصفح القنوات (Browse Channels)**.
+    
+    3. اضغط على اسم القناة العامة التي تريد الانضمام إليها.
+       <Image src={mobileBrowsePublic} alt="Mobile Browse" style={{ height: '450px', width: 'auto', borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto' }} />
+    </Steps>
+  </TabItem>
+</Tabs>
 
-2. حدد **انضمام (Join)** بجانب القناة العامة التي تريد الانضمام إليها.
+<Aside type="note">
+عند الانضمام، قد ترى رسالة ترحيب بناءً على [إجراءات القناة المكونة](/messaging-collaboration/collaborate-within-channels/create-channels). يمكنك الوصول إلى هذه الإجراءات من قائمة اسم القناة في اللوحة المركزية.
+</Aside>
 
-> ![عند تصفح القنوات المتاحة، حدد خيار الانضمام بجانب أي قناة لتصبح عضوًا.](../../../../images/join-channels.png)
+---
 
-</div>
+### مغادرة قناة (Leave a channel)
 
-<div class="tab">
+عند مغادرة قناة خاصة، ستحتاج لدعوة جديدة للعودة إليها. لن تتلقى أي إشعارات من القناة بعد مغادرتها.
 
-الهاتف المحمول (Mobile)
+<Aside type="note">
+يتم إضافة جميع المستخدمين إلى قناة **الساحة العامة (Town Square)** تلقائياً ولا يمكن مغادرتها أو أرشفتها، باستثناء الحسابات من نوع "ضيف".
+</Aside>
 
-1. اضغط على أيقونة [\|plus\|](##SUBST##|plus|) الموجودة في الزاوية العلوية اليمنى من التطبيق.
+<Tabs>
+  <TabItem label="الويب/سطح المكتب" icon="laptop">
+    حدد اسم القناة في أعلى اللوحة المركزية لفتح القائمة المنسدلة، ثم اختر **مغادرة القناة (Leave Channel)**.
+  </TabItem>
 
-![اضغط على أيقونة الزائد لعرض خيارات إضافية.](../../../../images/mobile-select-a-channel.jpg)
+  <TabItem label="الهاتف المحمول" icon="mobile">
+    <Steps>
+    1. اضغط على القناة التي تريد مغادرتها.
 
-2. اضغط على **تصفح القنوات (Browse Channels)**.
+    2. اضغط على أيقونة **المزيد (More)** (ثلاث نقاط رأسية) في الزاوية العلوية اليمنى.
+       <Image src={mobileMoreOptions} alt="More Options" style={{ height: '450px', width: 'auto', borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto' }} />
 
-![انقر على تصفح القنوات لعرض قائمة القنوات العامة.](../../../../images/create-channel-or-open-direct-message-on-mobile.jpg)
+    3. اضغط على **مغادرة القناة (Leave channel)** (توجد غالباً داخل خيارات المعلومات).
+       <Image src={mobileViewInfo} alt="Leave Options" style={{ height: '450px', width: 'auto', borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto' }} />
 
-3. اضغط على القناة العامة التي تريد الانضمام إليها.
+    4. اضغط على **مغادرة (Leave)** للتأكيد.
+       <Image src={mobileConfirmLeave} alt="Confirm Leave" style={{ height: '450px', width: 'auto', borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto' }} />
+    </Steps>
+  </TabItem>
+</Tabs>
 
-![اضغط على اسم القناة العامة التي تريد الانضمام إليها.](../../../../images/mobile-browse-public-channels.jpg)
-
-</div>
-
-:::note
-عندما تنضم إلى القنوات، وبناءً على [إجراءات القناة المكونة](/end-user-guide/collaborate/create-channels)، قد ترى رسالة ترحيب، وقد يتم إضافة القنوات إلى [فئة في الشريط الجانبي لقناتك](/end-user-guide/preferences/customize-your-channel-sidebar) تلقائيًا. باستخدام Mattermost في متصفح ويب أو تطبيق سطح المكتب، يمكنك الوصول إلى **إجراءات القناة (Channel Actions)** من قائمة اسم القناة المنسدلة في اللوحة المركزية لرؤية الإجراءات التلقائية التي تم تكوينها.
-:::
-
-راجع الوثائق التالية لمعرفة المزيد حول العمل مع القنوات:
-
-- [إنشاء القنوات (Create channels)](/end-user-guide/collaborate/create-channels)
-- [تصفح القنوات (Browse channels)](/end-user-guide/collaborate/browse-channels)
-- [تخصيص الشريط الجانبي لقناتك (Customize your channel sidebar)](/end-user-guide/preferences/customize-your-channel-sidebar)
-
-## مغادرة قناة (Leave a channel)
-
-عندما تغادر قناة خاصة، يجب أن يتم إضافتك مرة أخرى من قبل عضو آخر في القناة للانضمام مجددًا. لن تتلقى إشعارات إشارة من قناة إذا لم تكن عضوًا في تلك القناة.
-
-:::note
-يتم إضافة جميع المستخدمين إلى قناة **الساحة العامة (Town Square)** تلقائيًا. هذا يعني أن المستخدمين لا يمكنهم [أرشفة](/end-user-guide/collaborate/archive-unarchive-channels) أو [إلغاء أرشفة](/end-user-guide/collaborate/archive-unarchive-channels) أو مغادرة قناة **الساحة العامة (Town Square)**. ومع ذلك، فإن [الضيوف](/administration-guide/onboard/guest-accounts) الذين يتم دعوتهم يدويًا إلى **الساحة العامة (Town Square)** يمكنهم مغادرة القناة.
-:::
-
-<div class="tab">
-
-الويب/سطح المكتب (Web/Desktop)
-
-حدد اسم القناة في أعلى اللوحة المركزية للوصول إلى القائمة المنسدلة، ثم حدد **مغادرة القناة (Leave Channel)**.
-
-![يمكنك استخدام خيارات القناة المتاحة من اسم القناة لمغادرة القناة.](../../../../images/leave-channels.png)
-
-</div>
-
-<div class="tab">
-
-الهاتف المحمول (Mobile)
-
-1. اضغط على القناة التي تريد مغادرتها.
-
-![حدد القناة التي تريد مغادرتها.](../../)
-
-2. اضغط على أيقونة **المزيد (More)** [\|more-icon-vertical\|](##SUBST##|more-icon-vertical|) الموجودة في الزاوية العلوية اليمنى من التطبيق.
-
-![اضغط على المزيد من الخيارات للوصول إلى الخيارات المتاحة للقناة التي تريد مغادرتها.](../../../../images/mobile-select-more-options-for-a-channel.jpg)
-
-3. اضغط على **مغادرة القناة (Leave channel)**.
-
-![اضغط على مغادرة القناة لمغادرة القناة الحالية.](../../../../images/mobile-select-view-info-for-a-channel.jpg)
-
-4. اضغط على **مغادرة (Leave)** لتأكيد اختيارك.
-
-![اضغط على مغادرة لتأكيد اختيارك.](../../../../images/mobile-confirm-leave-a-channel.jpg)
-
-</div>
+#### مواضيع ذات صلة
+* [إنشاء القنوات](/messaging-collaboration/collaborate-within-channels/create-channels)
+* [تصفح القنوات](/messaging-collaboration/collaborate-within-channels/browse-channels/)
+* [أرشفة وإلغاء أرشفة القنوات](/messaging-collaboration/collaborate-within-channels/archive-and-unarchive-channels)

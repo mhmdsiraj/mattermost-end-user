@@ -3,6 +3,7 @@ title: "البحث عن الرسائل (Search for messages)"
 description: "تعرف على كيفية استخدام محرك بحث Mattermost للعثور على الرسائل والردود ومحتويات الملفات باستخدام المعاملات المتقدمة."
 ---
 
+<<<<<<< HEAD
 
 استخدم بحث Mattermost للعثور على الرسائل والردود ومحتويات الملفات. يمكنك أيضًا البحث عن طريق [الوسوم (hashtags)](#الوسوم-hashtags)، أو إجراء عمليات بحث أكثر تقدمًا باستخدام [معاملات البحث](#معاملات-البحث-search-modifiers)، أو ضبط نتائج البحث لإظهار الرسائل من الفريق الحالي، أو فريق معين، أو جميع الفرق.
 
@@ -198,3 +199,124 @@ description: "تعرف على كيفية استخدام محرك بحث Mattermo
 - الوسوم أو الإشارات الأخيرة لأسماء المستخدمين التي تحتوي على شرطة لا تعيد نتائج.
 - المصطلحات التي تحتوي على شرطة تعيد نتائج غير صحيحة لأن الشرطات يتم تجاهلها في محرك البحث.
 - بدءًا من الإصدار v7.1 من Mattermost، تحترم نتائج البحث قيمة `default_text_search_config` بدلاً من أن تكون ثابتة باللغة الإنجليزية. نوصي مسؤولي نظام Mattermost بمراجعة هذه القيمة للتأكد من تعيينها بشكل صحيح.
+=======
+import { Tabs,Icon , TabItem, Steps,Asite } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+
+{/* استيراد الأصول المرئية */}
+import searchMessages from '../../../../images/search-messages.png';
+import searchMessagesExpanded from '../../../../images/search-messages-expanded.png';
+import searchAllTeams from '../../../../images/search-all-teams.png';
+import jumpToMessage from '../../../../images/jump-to-message.png';
+import mobileSearch from '../../../../images/mobile-search-for-messages.jpg';
+import mobileTeamSelection from '../../../../images/mobile-search-message-team-selection.jpg';
+import mobileSearchHashtags from '../../../../images/mobile-search-message-criteria-with-hashtags.jpg';
+import mobileSearchModifiers from '../../../../images/mobile-search-message-with-modifiers.jpg';
+import mobileSearchResults from '../../../../images/mobile-search-message-results.jpg';
+import searchFiles from '../../../../images/search-files.png';
+import fileSearchFilter from '../../../../images/file-search-filter.png';
+import channelFilesIcon from '../../../../images/channel-files-icon.png';
+import calendarImg from '../../../../images/calendar2.png';
+
+استخدم بحث Mattermost للعثور على الرسائل والردود ومحتويات الملفات. يمكنك أيضًا البحث عن طريق [الوسوم](#الوسوم-hashtags)، أو إجراء عمليات بحث أكثر تقدمًا باستخدام [معاملات البحث](#معاملات-البحث-search-modifiers).
+
+
+
+## البحث عن رسالة (Search for message)
+
+<Tabs>
+  <TabItem label="الويب/سطح المكتب" icon="laptop">
+    <Steps>
+    1. اختر حقل البحث، ثم اختر **الرسائل**، وأدخل معايير البحث الخاصة بك.
+       <Image src={searchMessages} alt="حقل البحث" width={600} />
+       <Image src={searchMessagesExpanded} alt="حقل البحث الموسع" width={600} />
+
+    2. بشكل افتراضي، تتضمن النتائج رسائل من فريقك الحالي. بدءًا من الإصدار v10.8، يمكنك اختيار **جميع الفرق** للبحث الشامل.
+       <Image src={searchAllTeams} alt="البحث في جميع الفرق" width={600} />
+
+       <div style={{ padding: '1rem', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderInlineStart: '4px solid #3498db', borderRadius: '0.25rem', margin: '1rem 0' }}>
+         <strong>💡 تلميح:</strong> بدءًا من الإصدار v10.10، يتوفر معامل البحث `from:` للبحث عبر الفرق.
+       </div>
+
+    3. عندما تظهر النتائج، اختر **انتقال** لعرض الرسالة في سياقها الأصلي.
+       <Image src={jumpToMessage} alt="الانتقال للرسالة" width={600} />
+    </Steps>
+  </TabItem>
+
+  <TabItem label="الهاتف المحمول" icon="mobile">
+    <Steps>
+    1. اضغط على أيقونة **البحث** [\|search-icon\|](##SUBST##|search-icon|) في أسفل التطبيق.
+       <Image src={mobileSearch} alt="أيقونة البحث الجوال" width={300} />
+
+    2. اضغط على **جميع الفرق** للبحث الشامل أو اختر فريقًا محددًا.
+       <Image src={mobileTeamSelection} alt="اختيار الفريق" width={300} />
+
+    3. أدخل معايير البحث والوسوم المطلوبة.
+       <Image src={mobileSearchHashtags} alt="إدخال معايير البحث" width={300} />
+
+    4. استخدم [معاملات البحث](#معاملات-البحث-search-modifiers) لتحسين النتائج.
+       <Image src={mobileSearchModifiers} alt="تطبيق المعاملات" width={300} />
+       <Image src={mobileSearchResults} alt="نتائج البحث جوال" width={300} />
+    </Steps>
+  </TabItem>
+</Tabs>
+
+## البحث عن الملفات (Search for files)
+
+من حقل البحث، اختر **الملفات** للعثور على المرفقات. يتم البحث داخل أسماء الملفات ومحتويات المستندات المدعومة (PDF, DOCX, PPTX, إلخ).
+
+<Image src={searchFiles} alt="البحث عن الملفات" width={600} />
+
+### تصفية النتائج حسب نوع الملف (Filter results by file type)
+
+يمكنك تضييق البحث باختيار **تصفية نوع الملف** وتحديد فئات مثل الصور أو جداول البيانات.
+
+<Image src={fileSearchFilter} alt="تصفية حسب نوع الملف" width={600} />
+
+### الوصول إلى الملفات التي تمت مشاركتها مؤخرًا (Access recently shared files)
+
+<Tabs>
+  <TabItem label="الويب/سطح المكتب" icon="laptop">
+    اختر أيقونة **ملفات القناة  <fa class="fa-solid fa-save" />**  بجانب اسم القناة.
+    <Image src={channelFilesIcon} alt="أيقونة ملفات القناة" width={300} />
+  </TabItem>
+  <TabItem label="الهاتف المحمول" icon="mobile">
+    اضغط على اسم القناة ثم اختر **الملفات**.
+  </TabItem>
+</Tabs>
+
+## معاملات البحث (Search modifiers)
+
+استخدم هذه الكلمات المفتاحية لتقليل النتائج:
+
+| المعامل | الوصف | مثال |
+| :--- | :--- | :--- |
+| `from:` | رسائل من مستخدم محدد | `from:ali` |
+| `in:` | رسائل داخل قناة محددة | `in:town-square` |
+| `before:` | قبل تاريخ معين | `before:2024-01-01` |
+| `after:` | بعد تاريخ معين | `after:2023-12-01` |
+| `on:` | في تاريخ محدد | `on:2024-02-15` |
+
+<Image src={calendarImg} alt="منتقي التاريخ" width={400} />
+
+### الاستثناءات والرموز الخاصة
+* **الاستثناء `-`**: لاستبعاد كلمات (مثال: `test -release`).
+* **علامات الاقتباس `" "`**: للبحث عن عبارة دقيقة (مثال: `"Mattermost server"`).
+* **الرمز العام `*`**: للبحث عن الكلمات التي تبدأ بحروف معينة (مثال: `rea*`).
+
+## الوسوم (Hashtags)
+
+الوسوم هي علامات تبدأ بـ `#` وتستخدم لتصنيف الرسائل (مثال: `#bug`). للبحث عنها، ببساطة اضغط على الوسم في أي رسالة أو اكتبه في شريط البحث.
+
+
+
+<Aside type="note">    الوسوم لا تربط بالقنوات. للربط بقناة عامة استخدم رمز التلدة `~` (مثال: `~marketing`).</Aside>
+  
+
+## ملاحظات تقنية حول البحث (Technical notes about searching)
+
+يعتمد Mattermost على PostgreSQL للبحث في النصوص الكاملة.
+* **كلمات الإيقاف**: الكلمات الشائعة جداً مثل `the` أو `are` يتم تجاهلها لتجنب النتائج الكثيرة جداً.
+* **عناوين IP**: لا يمكن البحث عنها مباشرة كأرقام.
+* **الشرطات**: يتم تجاهل الشرطات في محرك البحث، لذا الكلمات التي تحتوي عليها قد تعيد نتائج غير دقيقة.
+>>>>>>> ee4a147 (Saving local documentation changes before merge)

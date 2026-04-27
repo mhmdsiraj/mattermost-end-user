@@ -1,67 +1,91 @@
 ---
-title: "تحويل القنوات العامة إلى قنوات خاصة (Convert public channels to private channels)"
+title: "تحويل القنوات العامة إلى قنوات خاصة "
 description: "تعرف على كيفية تحويل قناة عامة إلى قناة خاصة في Mattermost"
 ---
 
-:::note
-متاح في خطط [Entry و Professional و Enterprise و Enterprise Advanced](https://mattermost.com/pricing/)
-:::
+import { Image } from 'astro:assets';
+import { Aside, Tabs, TabItem, Steps, Badge } from '@astrojs/starlight/components';
+import convertPublicChannelToPrivate from '../../../../images/convert-public-channel-to-private.png';
+import mobileSelectAChannel from '../../../../images/mobile-select-a-channel.jpg';
+import mobileSelectMoreOptionsForAChannel from '../../../../images/mobile-select-more-options-for-a-channel.jpg';
+import mobileSelectViewInfoForAChannel from '../../../../images/mobile-select-view-info-for-a-channel.jpg';
+import mobileConvertToPrivateChannel from '../../../../images/mobile-convert-to-private-channel.jpg';
+import mobileConfirmConvertToPrivateChannel from '../../../../images/mobile-confirm-convert-to-private-channel.jpg';
+
 
 يجب أن تكون مسؤول نظام أو مسؤول فريق لتحويل القنوات العامة إلى قنوات خاصة. عند تحويل قناة من عامة إلى خاصة، يتم الحفاظ على سجلها وعضويتها. تظل العضوية في القناة خاصة عن طريق الدعوة فقط. تظل الملفات التي تمت مشاركتها علنًا متاحة لأي شخص لديه الرابط.
 
-:::note
+<Aside type="note">
 لا يمكن تحويل القناة الافتراضية **الساحة العامة (Town Square)** إلى قناة خاصة.
-:::
+</Aside>
 
-<div class="tab">
+<Tabs>
+  <TabItem label="الويب/سطح المكتب (Web/Desktop)" icon="laptop">
+    لتحويل قناة عامة إلى قناة خاصة، حدد اسم القناة العامة في أعلى اللوحة المركزية للوصول إلى القائمة المنسدلة، ثم حدد **تحويل إلى قناة خاصة (Convert to Private Channel)**.
 
-الويب/سطح المكتب (Web/Desktop)
+    <Image 
+      src={convertPublicChannelToPrivate} 
+      alt="من اسم القناة، يمكنك تحويل قناة عامة إلى قناة خاصة إذا كنت مسؤولاً." 
+      style={{ display: 'block', margin: '2rem auto', maxWidth: '100%' }} 
+    />
+  </TabItem>
 
-لتحويل قناة عامة إلى قناة خاصة، حدد اسم القناة العامة في أعلى اللوحة المركزية للوصول إلى القائمة المنسدلة، ثم حدد **تحويل إلى قناة خاصة (Convert to Private Channel)**.
+  <TabItem label="الهاتف المحمول (Mobile)" icon="mobile">
+    لتحويل قناة عامة إلى قناة خاصة:
 
-![من اسم القناة، يمكنك تحويل قناة عامة إلى قناة خاصة إذا كنت مسؤولاً.](../../../../images/convert-public-channel-to-private.png)
+    <Steps>
+    1. اضغط على القناة التي تريد تحويلها.
 
-</div>
+       <Image 
+         src={mobileSelectAChannel} 
+         alt="حدد القناة التي تريد إعادة تسميتها." 
+         style={{ height: '450px', width: 'auto', borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }} 
+       />
 
-<div class="tab">
+    2. اضغط على أيقونة **المزيد (More)** الموجودة في الزاوية العلوية اليمنى من التطبيق.
 
-الهاتف المحمول (Mobile)
+       <Image src={mobileSelectMoreOptionsForAChannel} alt="اضغط على المزيد من الخيارات للوصول إلى الخيارات المتاحة للقناة." style={{ height: '450px', width: 'auto', borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }}  />
 
-لتحويل قناة عامة إلى قناة خاصة:
+    3. اضغط على **عرض المعلومات (View info)**.
 
-1. اضغط على القناة التي تريد تحويلها.
+       <Image 
+         src={mobileSelectViewInfoForAChannel} 
+         alt="اضغط على عرض المعلومات لرؤية معلومات القناة الأساسية." 
+         style={{ height: '450px', width: 'auto', borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }} 
+       />
 
-![حدد القناة التي تريد إعادة تسميتها.](../../../../images/mobile-select-a-channel.jpg)
+    4. اضغط على **تحويل إلى قناة خاصة (Convert to private channel)**.
 
-2. اضغط على أيقونة **المزيد (More)** [\|more-icon-vertical\|](##SUBST##|more-icon-vertical|) الموجودة in the top right corner of the app.
+       <Image 
+         src={mobileConvertToPrivateChannel} 
+         alt="اضغط على تحويل إلى قناة خاصة لجعل القناة خاصة." 
+         style={{ height: '450px', width: 'auto', borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }} 
+       />
 
-![اضغط على المزيد من الخيارات للوصول إلى الخيارات المتاحة للقناة.](../../../../images/mobile-select-more-options-for-a-channel.jpg)
+    5. اضغط على **نعم (Yes)** للتأكيد.
 
-3. اضغط على **عرض المعلومات (View info)**.
-
-![اضغط على عرض المعلومات لرؤية معلومات القناة الأساسية.](../../../../images/mobile-select-view-info-for-a-channel.jpg)
-
-4. اضغط على **تحويل إلى قناة خاصة (Convert to private channel)**.
-
-![اضغط على تحويل إلى قناة خاصة لجعل القناة خاصة.](../../../../images/mobile-convert-to-private-channel.jpg)
-
-5. اضغط على **نعم (Yes)** للتأكيد.
-
-![اضغط على نعم لتأكيد اختيارك.](../../../../images/mobile-confirm-convert-to-private-channel.jpg)
-
-</div>
+       <Image 
+         src={mobileConfirmConvertToPrivateChannel} 
+         alt="اضغط على نعم لتأكيد اختيارك." 
+         style={{ height: '450px', width: 'auto', borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }} 
+       />
+    </Steps>
+  </TabItem>
+</Tabs>
 
 ## تحويل القنوات الخاصة إلى قنوات عامة (Convert private channels to public channels)
 
 نظرًا للمخاوف الأمنية المحتملة المتعلقة بمشاركة سجل القنوات الخاصة، يمكن لمسؤولي النظام فقط تحويل القنوات الخاصة إلى قنوات عامة باستخدام وحدة تحكم النظام.
 
-:::note
-- تقتصر القدرة على تحويل القنوات الخاصة إلى قنوات عامة باستخدام [واجهة برمجة التطبيقات (API)](https://api.mattermost.com/#tag/channels/operation/UpdateChannelPrivacy) أو [أمر mmctl channel modify](/administration-guide/manage/mmctl-command-line-tool) على مسؤولي النظام ومسؤولي الفريق والمستخدمين الذين لديهم أدوار مسؤول محددة. يتمتع مسؤولو الفريق بهذا الإذن افتراضيًا، ولكن يمكن لمسؤولي النظام تقييده أو تعيينه لأدوار أخرى.
-- تتطلب الأدوار المحددة أذونات لإدارة قنوات ومجموعات إدارة المستخدمين، بما في ذلك `sysconsole_write_user_management_channels` و `sysconsole_write_user_management_groups`. قم بإدارة الأذونات من خلال [مخطط الأذونات](/administration-guide/onboard/advanced-permissions).
-- إذا تم تمكين [إدارة قنوات مجموعات المزامنة (Sync Group channel management)](/administration-guide/manage/team-channel-members)، فلا يمكن تحويل القنوات الخاصة إلى قنوات عامة.
-:::
+<Aside type="note">
+* تقتصر القدرة على تحويل القنوات الخاصة إلى قنوات عامة باستخدامواجهة برمجة التطبيقات  على مسؤولي النظام ومسؤولي الفريق والمستخدمين الذين لديهم أدوار مسؤول محددة.
+* تتطلب الأدوار المحددة أذونات لإدارة قنوات ومجموعات إدارة المستخدمين. قم بإدارة الأذونات من خلال مخطط الأذونات
+* إذا تم تمكين إدارة قنوات مجموعات المزامنة ، فلا يمكن تحويل القنوات الخاصة إلى قنوات عامة.
+</Aside>
 
+<Steps>
 1. انتقل إلى **وحدة تحكم النظام (System Console) > القنوات (Channels)**.
 2. حدد **تحرير (Edit)** لقناة خاصة موجودة. يمكنك أيضًا تصفية قائمة القنوات إلى القنوات الخاصة فقط.
 3. تحت **إدارة القناة (Channel Management) > قناة عامة أو قناة خاصة (Public channel or private channel)**، حدد **عامة (Public)**.
 4. حدد **حفظ (Save)**.
+</Steps>

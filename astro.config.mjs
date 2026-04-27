@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
+import    "./src/styles/custom.css";
+
 
 import tailwindcss from "@tailwindcss/vite";
 
@@ -12,7 +14,15 @@ export default defineConfig({
       logo: {
         src: "./src/assets/logo-light.jpg",
         alt: "Mattermost Logo",
-      },
+      },head: [
+        {
+          tag: 'link',
+          attrs: {
+            rel: 'stylesheet',
+            href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css',
+          },
+        },
+      ],
       social: [
         {
           icon: "github",
@@ -22,9 +32,11 @@ export default defineConfig({
       ],
       customCss: [
         "./src/styles/global.css",
+        './src/styles/custom.css',
         "@fontsource/ibm-plex-sans-arabic/400.css",
         "@fontsource/ibm-plex-sans-arabic/700.css",
       ],
+      
       sidebar: [
         {
           label: "دليل المستخدم النهائي",

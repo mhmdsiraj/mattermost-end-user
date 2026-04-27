@@ -1,103 +1,102 @@
 ---
-title: "أرشفة وإلغاء أرشفة القنوات (Archive and unarchive channels)"
+title: "أرشفة وإلغاء أرشفة القنوات "
 description: "تعرف على كيفية أرشفة القنوات العامة والخاصة في Mattermost وإلغاء أرشفتها"
 ---
 
+import { Tabs, TabItem, Steps,Aside } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
 
-## أرشفة قناة (Archive a channel)
+{/* استيراد الأصول المرئية */}
+import mobileSelectChannel from '../../../../images/mobile-select-a-channel.jpg';
+import mobileMoreOptions from '../../../../images/mobile-select-more-options-for-a-channel.jpg';
+import mobileViewInfo from '../../../../images/mobile-select-view-info-for-a-channel.jpg';
+import mobileEditChannel from '../../../../images/mobile-edit-channel.jpg';
+import mobileConfirmArchive from '../../../../images/mobile-confirm-archive-a-channel.jpg';
+import unarchiveChannelImg from '../../../../images/unarchive-channel.png';
+import mobileUnarchive from '../../../../images/mobile-unarchive-a-channel.jpg';
+import mobileConfirmUnarchive from '../../../../images/mobile-confirm-unarchive-a-channel.jpg';
 
-قم بحذف [القنوات العامة](/end-user-guide/collaborate/channel-types) و [القنوات الخاصة](/end-user-guide/collaborate/channel-types) عندما لا تعود هناك حاجة إليها عن طريق أرشفتها. تؤدي أرشفة القنوات إلى إزالتها من الشريط الجانبي للقناة وتمييزها للقراءة فقط. يمكن لأي شخص أرشفة قناة عامة أو خاصة يكون عضوًا فيها، ما لم يقم مسؤول النظام بـ [تعطيل](/administration-guide/onboard/advanced-permissions) قدرتك على القيام بذلك.
+### أرشفة قناة 
 
-:::note
-يمكنك الاستمرار في الوصول إلى القنوات المؤرشفة، ما لم يقم مسؤول النظام بـ [تعطيل](/administration-guide/configure/site-configuration-settings) قدرتك على القيام بذلك.
-:::
+أرشِف القنوات العامة والخاصة عندما لا تعود هناك حاجة إليها. الأرشفة تزيل القناة من الشريط الجانبي وتضعها في حالة قراءة فقط. أي عضو في القناة يمكنه أرشفتها ما لم يقم مسؤول النظام بتعطيل هذا الحق.
 
-<div class="tab">
+<Aside type="note" >
+    يمكنك الاستمرار في الوصول إلى القنوات المؤرشفة ما لم يُمنع ذلك بواسطة إعدادات النظام.
+ </Aside>
 
-الويب/سطح المكتب (Web/Desktop)
 
-لأرشفة قناة، حدد اسم القناة في أعلى اللوحة المركزية للوصول إلى القائمة المنسدلة، ثم حدد **أرشفة القناة (Archive Channel)**.
+<Tabs>
+  <TabItem label="الويب/سطح المكتب (Web/Desktop)" icon="laptop">
+    لتأرشفة قناة: افتح قائمة القناة من اسم القناة في أعلى اللوحة المركزية ثم اختر **أرشفة القناة (Archive Channel)**.
+  </TabItem>
 
-</div>
+  <TabItem label="الهاتف المحمول (Mobile)" icon="mobile">
+    <Steps>
+    1. اضغط على القناة التي تريد أرشفتها.
+       <Image src={mobileSelectChannel} alt="Step 1" width={300} style={{ borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto' }} />
 
-<div class="tab">
+    2. اضغط أيقونة **المزيد (More)** في الزاوية العلوية اليمنى.
+       <Image src={mobileMoreOptions} alt="Step 2" width={300} style={{ borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto' }} />
 
-الهاتف المحمول (Mobile)
+    3. اضغط **عرض المعلومات (View info)**.
+       <Image src={mobileViewInfo} alt="Step 3" width={300} style={{ borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto' }} />
 
-لأرشفة قناة:
+    4. اختر **أرشفة القناة (Archive Channel)** ثم أكد بالضغط على **نعم (Yes)**.
+       <Image src={mobileEditChannel} alt="Step 4" width={300} style={{ borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto' }} />
 
-1. اضغط على القناة التي تريد حذفها.
+    5. اضغط **نعم (Yes)** للتأكيد النهائي.
+       <Image src={mobileConfirmArchive} alt="Step 5" width={300} style={{ borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto' }} />
+    </Steps>
+  </TabItem>
+</Tabs>
 
-![حدد القناة التي تريد تحريرها.](../../../../images/mobile-select-a-channel.jpg)
+<Aside type="note" >
+    <ul style={{ listStyleType: 'disc', paddingInlineStart: '1.5rem' }}>
+      <li>عند تعطيل مستخدم، قد تُؤرشف قنوات الرسائل المباشرة المرتبطة به وتصبح للقراءة فقط.</li>
+      <li>لا يمكن أرشفة قنوات الرسائل الجماعية، ويمكن إغلاقها لإخفائها من الشريط الجانبي.</li>
+      <li>لا يمكن أرشفة قناة Town Square الافتراضية.</li>
+      <li>يمكن لمسؤولي النظام أرشفة القنوات عبر وحدة التحكم دون الانضمام إليها.</li>
+      <li>لا يمكن إعادة استخدام عنوان URL لقناة مؤرشفة عند إنشاء قناة جديدة باستخدام نفس الاسم.</li>
+    </ul>
+ </Aside>
 
-2. اضغط على أيقونة **المزيد (More)** [\|more-icon-vertical\|](##SUBST##|more-icon-vertical|) الموجودة في الزاوية العلوية اليمنى من التطبيق.
+---
 
-![اضغط على المزيد من الخيارات للوصول إلى الخيارات المتاحة للقناة.](../../../../images/mobile-select-more-options-for-a-channel.jpg)
+### إلغاء أرشفة قناة 
 
-3. اضغط على **عرض المعلومات (View info)**.
 
-![اضغط على عرض المعلومات لرؤية معلومات القناة الأساسية.](../../../../images/mobile-select-view-info-for-a-channel.jpg)
+يمكن لمسؤولي النظام ومسؤولي الفريق استعادة القنوات المؤرشفة — يتم استعادة العضويات والمحتوى ما لم تحذف الرسائل أو الملفات بواسطة سياسة الاحتفاظ.
 
-4. اضغط على **أرشفة القناة (Archive Channel)**.
+<Tabs>
+  <TabItem label="الويب/سطح المكتب (Web/Desktop)" icon="laptop">
+    <Steps>
+    1. للعثور على القناة، ابحث عنها ثم افتحها.
+    2. من قائمة القناة اختر **إلغاء أرشفة القناة (Unarchive Channel)**.
+    </Steps>
+    <Image src={unarchiveChannelImg} alt="Unarchive Channel Web" style={{ height: '450px', width: 'auto', borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto' }}/>
+  </TabItem>
 
-![اضغط على أرشفة القناة لأرشفة القناة الحالية.](../../../../images/mobile-edit-channel.jpg)
+  <TabItem label="الهاتف المحمول (Mobile)" icon="mobile">
+    <Steps>
+    1. اضغط على القناة التي تريد إلغاء أرشفتها.
+       <Image src={mobileSelectChannel} alt="Select Channel" width={300} style={{ borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto' }} />
 
-5. اضغط على **نعم (Yes)** للتأكيد.
+    2. اضغط أيقونة **المزيد (More)**.
+       <Image src={mobileMoreOptions} alt="More Options" width={300} style={{ borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto' }} />
 
-![اضغط على نعم لتأكيد اختيارك.](../../../../images/mobile-confirm-archive-a-channel.jpg)
+    3. اضغط **عرض المعلومات (View info)**.
+       <Image src={mobileViewInfo} alt="View Info" width={300} style={{ borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto' }} />
 
-</div>
+    4. اضغط **إلغاء أرشفة القناة (Unarchive Channel)**.
+       <Image src={mobileUnarchive} alt="Unarchive Click" width={300} 
+       style={{ borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto' }} />
 
-:::note
-- عندما يتم تعطيل مستخدم Mattermost في النظام، يتم أرشفة [قناة الرسائل المباشرة](/end-user-guide/collaborate/channel-types) الخاصة بك مع ذلك المستخدم وتمييزها للقراءة فقط. تظهر أيقونة **مؤرشف (Archived)** [\|file-box\|](##SUBST##|file-box|) بجوار القنوات المؤرشفة. بدءًا من الإصدار v11.5 من Mattermost، تعرض القنوات الخاصة المؤرشفة أيقونة **قفل الأرشيف (Archive Lock)** مميزة لتمييزها عن القنوات المؤرشفة الأخرى.
-- لا يمكن أرشفة [قنوات الرسائل الجماعية](/end-user-guide/collaborate/channel-types)، ولكن يمكن إغلاقها لإخفائها من الشريط الجانبي للقناة.
-- لا يمكن أرشفة قناة **الساحة العامة (Town Square)** الافتراضية.
-- يمكن لمسؤولي النظام أرشفة القنوات دون الحاجة إلى أن يكونوا أعضاء في القناة باستخدام وحدة تحكم النظام.
-- نظرًا لوجود نسخة من القناة على الخادم، لا يمكنك إعادة استخدام عنوان URL لقناة مؤرشفة عند [إنشاء قناة جديدة](/end-user-guide/collaborate/create-channels).
-:::
+    5. اضغط **نعم (Yes)** للتأكيد.
+       <Image src={mobileConfirmUnarchive} alt="Confirm Unarchive" width={300}    style={{ borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto' }} />
+    </Steps>
+  </TabItem>
+</Tabs>
 
-## إلغاء أرشفة قناة (Unarchive a channel)
-
-يمكن لمسؤولي النظام ومسؤولي الفريق استعادة القنوات المؤرشفة. عندما يتم إلغاء أرشفة قناة، يتم استعادة عضوية القناة وجميع محتوياتها، ما لم يتم حذف الرسائل والملفات بناءً على [سياسة الاحتفاظ بالبيانات](/administration-guide/configure/compliance-configuration-settings).
-
-<div class="tab">
-
-الويب/سطح المكتب (Web/Desktop)
-
-ابحث عن القناة إذا لزم الأمر. ثم افتح القناة، وحدد اسم القناة في أعلى اللوحة المركزية للوصول إلى القائمة المنسدلة وحدد **إلغاء أرشفة القناة (Unarchive Channel)**.
-
-![إلغاء أرشفة قناة.](../../../../images/unarchive-channel.png)
-
-</div>
-
-<div class="tab">
-
-الهاتف المحمول (Mobile)
-
-لإلغاء أرشفة قناة:
-
-1. اضغط على القناة التي تريد إلغاء أرشفتها.
-
-![حدد القناة التي تريد تحريرها.](../../../../images/mobile-select-a-channel.jpg)
-
-2. اضغط على أيقونة **المزيد (More)** [\|more-icon-vertical\|](##SUBST##|more-icon-vertical|) الموجودة في الزاوية العلوية اليمنى من التطبيق.
-
-![اضغط على المزيد من الخيارات للوصول إلى الخيارات المتاحة للقناة.](../../../../images/mobile-select-more-options-for-a-channel.jpg)
-
-3. اضغط على **عرض المعلومات (View info)**.
-
-![اضغط على عرض المعلومات لرؤية معلومات القناة الأساسية.](../../../../images/mobile-select-view-info-for-a-channel.jpg)
-
-4. اضغط على **إلغاء أرشفة القناة (Unarchive Channel)**.
-
-![اضغط على إلغاء أرشفة القناة لإلغاء أرشفة القناة الحالية.](../../../../images/mobile-unarchive-a-channel.jpg)
-
-5. اضغط على **نعم (Yes)** للتأكيد.
-
-![اضغط على نعم لتأكيد اختيارك.](../../../../images/mobile-confirm-unarchive-a-channel.jpg)
-
-</div>
-
-:::note
-يمكن لمسؤولي النظام إلغاء أرشفة القنوات [عبر mmctl](/administration-guide/manage/mmctl-command-line-tool)، ويمكن لمسؤولي الفريق إلغاء الأرشفة عبر [واجهة برمجة التطبيقات (API)](https://api.mattermost.com/#operation/RestoreChannel).
-:::
+<Aside type="note" >
+    يمكن لمسؤولي النظام إلغاء أرشفة القنوات عبر `mmctl` والمسؤولون الآخرون عبر واجهة برمجة التطبيقات.
+ </Aside>

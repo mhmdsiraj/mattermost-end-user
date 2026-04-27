@@ -3,49 +3,78 @@ title: "تصفح القنوات (Browse channels)"
 description: "تعرف على كيفية البحث عن القنوات العامة في Mattermost والانضمام إليها"
 ---
 
+import { Aside, Tabs, TabItem, Steps } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
 
-<div class="tab">
+{/* استيراد الصور */}
+import mobileSelectChannel from '../../../../images/mobile-select-a-channel.jpg';
+import createChannelMobile from '../../../../images/create-channel-or-open-direct-message-on-mobile.jpg';
+import mobileBrowseSearch from '../../../../images/mobile-browse-public-channels-using-search.jpg';
+import mobileBrowseFilters from '../../../../images/mobile-browse-public-channels-using-filters.jpg';
+import mobileBrowsePublic from '../../../../images/mobile-browse-public-channels.jpg';
 
-الويب/سطح المكتب (Web/Desktop)
+<Tabs>
+  <TabItem label="الويب/سطح المكتب (Web/Desktop)" icon="laptop">
+    <Steps>
+      1. اختر أيقونة **زائد  في أعلى الشريط الجانبي لمعرفة جميع القنوات العامة المتاحة التي يمكنك الانضمام إليها.
+      2. اختر تصفح القنوات (Browse Channels) .
+      3. ابحث عن القنوات بالاسم أو مرّر القائمة.
+      4. اختر **انضمام (Join)** بجانب أي قناة لتصبح عضوًا فيها.
+    </Steps>
 
-1. اختر أيقونة **زائد (Plus)** [\|plus\|](##SUBST##|plus|) في أعلى الشريط الجانبي لمعرفة جميع القنوات العامة المتاحة التي يمكنك الانضمام إليها.
-2. اختر **تصفح القنوات (Browse Channels)**.
-3. ابحث عن القنوات بالاسم أو مرّر القائمة.
-4. اختر **انضمام (Join)** بجانب أي قناة لتصبح عضوًا فيها.
+<Aside type="note" >
+    بدءًا من الإصدار v9.1 من Mattermost، يمكنك تصفية القنوات حسب عامة، أو خاصة، أو مؤرشفة، وإخفاء القنوات التي أنت عضو فيها بالفعل.
+ 
+ </Aside>
 
-:::note
-بدءًا من الإصدار v9.1 من Mattermost، يمكنك تصفية القنوات حسب عامة، أو خاصة، أو مؤرشفة، وإخفاء القنوات التي أنت عضو فيها بالفعل.
-:::
+  </TabItem>
 
-</div>
+  <TabItem label="الهاتف المحمول (Mobile)" icon="mobile">
+    <Steps>
+      1. اضغط على أيقونة **+** زائد  في أعلى يمين التطبيق.
+         
+         <Image 
+           src={mobileSelectChannel} 
+           alt="اضغط على أيقونة الزائد لعرض خيارات إضافية." 
+           width={300} 
+         />
 
-<div class="tab">
+      2. اضغط على **تصفح القنوات (Browse Channels)**.
 
-الهاتف المحمول (Mobile)
+         <Image 
+           src={createChannelMobile} 
+           alt="انقر على تصفح القنوات لعرض قائمة القنوات العامة." 
+           width={300} 
+         />
 
-1. اضغط على أيقونة **زائد (Plus)** [\|plus\|](##SUBST##|plus|) في أعلى يمين التطبيق.
+      3. ابحث عن القنوات بالاسم أو صفِّ قائمة القنوات لعرض القنوات العامة أو المؤرشفة أو المشتركة.
 
-![اضغط على أيقونة الزائد لعرض خيارات إضافية.](../../../../images/mobile-select-a-channel.jpg)
+         <Image 
+           src={mobileBrowseSearch} 
+           alt="اكتب اسم القناة في البحث للعثور عليها من القائمة." 
+           width={300} 
+         />
 
-2. اضغط على **تصفح القنوات (Browse Channels)**.
+         <Image 
+           src={mobileBrowseFilters} 
+           alt="اضغط على عرض لاختيار أحد الفلاتر المتاحة مثل القنوات العامة، والقنوات المؤرشفة، إلخ." 
+           width={300} 
+         />
 
-![انقر على تصفح القنوات لعرض قائمة القنوات العامة.](../../../../images/create-channel-or-open-direct-message-on-mobile.jpg)
+      4. اضغط على اسم القناة للانضمام إليها.
 
-3. ابحث عن القنوات بالاسم أو صفِّ قائمة القنوات لعرض القنوات العامة أو المؤرشفة أو المشتركة.
+         <Image 
+           src={mobileBrowsePublic} 
+           alt="اضغط على اسم القناة العامة التي تريد الانضمام إليها." 
+           width={300} 
+         />
+    </Steps>
 
-![اكتب اسم القناة في البحث للعثور عليها من القائمة.](../../../../images/mobile-browse-public-channels-using-search.jpg)
-
-![اضغط على عرض لاختيار أحد الفلاتر المتاحة مثل القنوات العامة، والقنوات المؤرشفة، إلخ.](../../../../images/mobile-browse-public-channels-using-filters.jpg)
-
-4. اضغط على اسم القناة للانضمام إليها.
-
-![اضغط على اسم القناة العامة التي تريد الانضمام إليها.](../../../../images/mobile-browse-public-channels.jpg)
-
-:::note
-يمكنك تصفية قائمة القنوات حسب عامة أو مؤرشفة أو مشتركة.
-:::
-
-</div>
+    <Aside type="note">
+      يمكنك تصفية قائمة القنوات حسب عامة أو مؤرشفة أو مشتركة.
+    </Aside>
+  </TabItem>
+</Tabs>
 
 هل تريد عرض كل القنوات التي أنت عضو فيها، أو لا تستطيع العثور على قناة خاصة؟ في المتصفح أو تطبيق سطح المكتب، اختر **البحث عن قناة (Find Channel)** في الشريط الجانبي لعرض كل القنوات التي أنت عضو فيها عبر جميع فرقك، بما في ذلك القنوات العامة والخاصة، والرسائل المباشرة والجماعية، والقنوات غير المقروءة، والسلاسل. القنوات المكتومة (muted) لا تظهر في النتائج.
 
@@ -54,4 +83,8 @@ description: "تعرف على كيفية البحث عن القنوات العا
 في المتصفح أو تطبيق سطح المكتب، استخدم أسهم **السجل (History)** أعلى الشريط الجانبي للتنقل عبر سجل القنوات.
 
 - اختر السهم الأيسر للرجوع صفحة واحدة.
+<<<<<<< HEAD
 - اختر السهم الأيمن للتقدم صفحة واحدة.
+=======
+- اختر السهم الأيمن للتقدم صفحة واحدة.
+>>>>>>> ee4a147 (Saving local documentation changes before merge)

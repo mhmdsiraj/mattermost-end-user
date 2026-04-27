@@ -1,48 +1,68 @@
 ---
-title: "تسجيل الخروج من Mattermost"
-description: "تسجيل الخروج من Mattermost"
+title: "تسجيل الخروج من Mattermost (Log out of Mattermost)"
+description: "تعرف على كيفية تسجيل الخروج من Mattermost وما يحدث لبياناتك وجلسات العمل الخاصة بك عند القيام بذلك."
 ---
 
-:::note
-[\|plans-img-yellow\|](##SUBST##|plans-img-yellow|) متاح على خطط [Entry و Professional و Enterprise و Enterprise Advanced](https://mattermost.com/pricing/)
-:::
+import { Image } from 'astro:assets';
+import { Tabs, TabItem, Aside } from '@astrojs/starlight/components';
+import profileLogOut from '../../../images/profile-log-out.png';
+import profileLogOutMobile from '../../../images/profile-log-out-mobile.png';
 
 يمكنك تسجيل الخروج من Mattermost من خلال صورة ملفك الشخصي. اختر **تسجيل الخروج (Log Out)** لتسجيل الخروج من جميع الفرق على الخادم.
 
-<div class="tab">
+<Tabs>
+  <TabItem label="الويب/سطح المكتب (Web/Desktop)" icon="laptop">
+    للمغادرة، انقر على صورة ملفك الشخصي في الزاوية العلوية واختبر خيار تسجيل الخروج.
+    
+    <Image 
+      src={profileLogOut} 
+      alt="تسجيل الخروج من Mattermost من صورة ملفك الشخصي." 
+      style={{ display: 'block', margin: '2rem auto', maxWidth: '100%' }} 
+    />
+  </TabItem>
 
-الويب/سطح المكتب (Web/Desktop)
+  <TabItem label="الهاتف المحمول (Mobile)" icon="mobile">
+    اضغط على صورة ملفك الشخصي للوصول إلى خيارات الحساب ثم اختر تسجيل الخروج.
 
-![تسجيل الخروج من Mattermost من صورة ملفك الشخصي.](../../../images/profile-log-out.png)
-
-</div>
-
-<div class="tab">
-
-الهاتف المحمول (Mobile)
-
-![تسجيل الخروج من Mattermost من صورة ملفك الشخصي.](../../../images/profile-log-out-mobile.png)
-
-</div>
+    <Image 
+      src={profileLogOutMobile} 
+      alt="تسجيل الخروج من Mattermost من صورة ملفك الشخصي على الهاتف." 
+      style={{ height: '450px', width: 'auto', borderRadius: '15px', border: '1px solid #ddd', display: 'block', margin: '2rem auto', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }} 
+    />
+  </TabItem>
+</Tabs>
 
 ## الأسئلة الشائعة (FAQ)
 
 ### ماذا يحدث عند تسجيل الخروج من Mattermost؟
 
-عند تسجيل الخروج من Mattermost، تُحذف جميع البيانات المتعلقة بجلسة العمل الخاصة بك، باستثناء سجل في قاعدة بيانات التطبيق بالخادم الذي قمت بالوصول إليه وبعض معلومات حالة النشاط العامة، مثل قائمة المهام للتشغيل الأولي. تُحذف بيانات المستخدم المخزّنة في قاعدة بيانات الخادم عند تسجيل الخروج. إذا قمت بحذف تطبيق Mattermost على الحاسوب والهاتف المحمول، فسيتم أيضًا حذف أحدث عنوان URL للخادم وبيانات الحالة.
+عند تسجيل الخروج، تُحذف جميع البيانات المتعلقة بجلسة العمل الحالية من جهازك. يظل سجلك محفوظاً في قاعدة بيانات الخادم، ولكن يتم تنظيف البيانات المحلية لضمان الأمان. إذا قمت بحذف التطبيق نهائياً، فستُحذف أيضاً إعدادات الحالة وعناوين URL المخزنة.
 
-عند تسجيل الخروج، يتم أيضًا حذف البيانات التالية:
+تشمل البيانات التي يتم حذفها محلياً عند تسجيل الخروج ما يلي:
 
-- جميع إشعارات الدفع (push notifications) من ذلك الخادم.
-- عملاء الـ websocket وعمليات الشبكة (network) وعمليات التحليلات المخزّنة محليًا في الذاكرة.
-- جميع ملفات تعريف الارتباط (cookies) الخاصة بعنوان URL للخادم.
-- ذاكرة التخزين المؤقت للصور لجميع الخوادم (ليس فقط الخادم الذي سجّلت الخروج منه).
-- جميع الملفات المحفوظة في دليل التخزين المؤقت لذلك الخادم.
-- جميع الصور المصغرة والبيانات المحفوظة في الحافظة (clipboard) لجميع الخوادم (ليس فقط الخادم الذي سجّلت الخروج منه).
-- دليل `image_cache` (في تطبيق Android).
+* **إشعارات الدفع (Push Notifications):** يتم إيقاف جميع الإشعارات القادمة من ذلك الخادم.
+* **الجلسات النشطة:** تُغلق عمليات الـ WebSocket والاتصالات الشبكية المخزنة في الذاكرة.
+* **ملفات تعريف الارتباط (Cookies):** تُحذف جميع الكوكيز المرتبطة بعنوان URL للخادم.
+* **ذاكرة التخزين المؤقت (Cache):** يتم تنظيف ذاكرة الصور، الملفات المؤقتة، والصور المصغرة (Thumbnail) لجميع الخوادم.
+* **الحافظة (Clipboard):** تُمسح البيانات المحفوظة في الحافظة لضمان الخصوصية.
 
-إذا كان لديك عدة حسابات Mattermost على نفس الخادم، فسيؤدي تسجيل الخروج من حساب واحد إلى عدم تسجيل الخروج من الحسابات الأخرى.
+<Aside type="note">
+إذا كنت تمتلك عدة حسابات على نفس الخادم، فإن تسجيل الخروج من حساب واحد **لن يؤثر** على الحسابات الأخرى؛ ستبقى مسجلاً للدخول فيها بشكل مستقل.
+</Aside>
 
 ### ماذا يحدث إذا قمت بتسجيل الخروج بينما جهازك مسجل في Intune MAM؟
 
-إذا كان جهازك مسجّلًا في Intune MAM (Mobile Application Management)، فسيؤدي تسجيل الخروج من Mattermost إلى إزالة جميع بيانات مساحة العمل وحماية Intune الخاصة بتلك المساحة من جهاز iOS الخاص بك. يمكنك تسجيل الدخول مرة أخرى باستخدام حساب Microsoft إذا احتجت إلى الوصول. لمزيد من المعلومات راجع [الوصول إلى مساحة العمل مع Intune MAM](/end-user-guide/access/access-your-workspace#mobile-via-microsoft-intune).
+إذا كان جهازك يستخدم نظام إدارة تطبيقات الهاتف المحمول **Microsoft Intune MAM**:
+
+1. سيؤدي تسجيل الخروج إلى إزالة كافة بيانات مساحة العمل المحمية فوراً.
+2. ستتم إزالة طبقة حماية Intune الخاصة بتلك المساحة من جهازك.
+3. يمكنك تسجيل الدخول مرة أخرى لاحقاً لاستعادة الوصول والسياسات الأمنية.
+
+لمزيد من التفاصيل حول هذا النظام، راجع دليل [الوصول إلى مساحة العمل عبر Microsoft Intune](/access-your-workspace/access-your-workspace).
+
+---
+
+### مواضيع ذات صلة
+* [الوصول إلى مساحة عملك](/access-your-workspace/access-your-workspace)
+* [إدارة تفضيلات الأمان](/customize-your-preferences/manage-your-security-preferences)
+* [الاتصال بمساحات عمل متعددة](/customize-your-preferences/connect-to-multiple-workspaces)

@@ -3,27 +3,48 @@ title: "تمييز الرسائل كغير مقروءة (Mark messages as unread
 description: "تعرف على كيفية تمييز الرسائل كغير مقروءة في Mattermost للعودة إليها ومتابعتها لاحقًا."
 ---
 
+import { Tabs, TabItem,Aside } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+
+{/* استيراد الصور */}
+import messageMore from '../../../../images/message-more.png';
+import markAsUnreadImg from '../../../../images/mark-message-as-unread.png';
+import mobileMarkUnreadGif from '../../../../images/mobile-mark-a-message-as-unread.gif';
 
 إذا قرأت رسالة ولكن ليس لديك وقت للتعامل معها فورًا، يمكنك تمييزها كغير مقروءة. يؤدي تمييز الرسالة كغير مقروءة إلى عرض اسم القناة بخط عريض في الشريط الجانبي وتجميع الرسالة مع باقي الرسائل غير المقروءة.
 
-<div class="tab">
+<Tabs>
+  <TabItem label="الويب/سطح المكتب" icon="laptop">
+    مرّر مؤشر الفأرة فوق الرسالة، واختر أيقونة **المزيد** [\|more-icon\|](##SUBST##|more-icon|) ثم اختر **تمييز كغير مقروء**.
 
-الويب/سطح المكتب (Web/Desktop)
+    <Image 
+      src={messageMore} 
+      alt="خيارات الرسالة من أيقونة المزيد" 
+      width={600} 
+    />
 
-مرّر مؤشر الفأرة فوق الرسالة، واختر أيقونة **المزيد (More)** [\|more-icon\|](##SUBST##|more-icon|) ثم اختر **تمييز كغير مقروء (Mark as Unread)**.
+    <Image 
+      src={markAsUnreadImg} 
+      alt="تمييز الرسائل كغير مقروءة" 
+      width={600} 
+    />
+  </TabItem>
 
-![عند تحريك المؤشر فوق الرسائل، يمكنك الوصول إلى خيارات الرسالة من أيقونة المزيد.](../../../../images/message-more.png)
+  <TabItem label="الهاتف المحمول" icon="mobile">
+    اضغط مطولاً على رسالة، ثم اضغط على **تمييز كغير مقروء**.
 
-![يمكنك تمييز الرسائل كغير مقروءة للعودة إليها لاحقًا.](../../../../images/mark-message-as-unread.png)
+    <Image 
+      src={mobileMarkUnreadGif} 
+      alt="تمييز كغير مقروء في الجوال" 
+      width={300} 
+    />
+  </TabItem>
+</Tabs>
 
-</div>
+<Aside type="note">
+    تساعدك هذه الميزة في الحفاظ على تنظيم مهامك وضمان عدم نسيان الرد على الرسائل المهمة في وقت لاحق.
 
-<div class="tab">
 
-الهاتف المحمول (Mobile)
+</Aside>
 
-اضغط مطولاً على رسالة، ثم اضغط على **تمييز كغير مقروء (Mark as Unread)**.
 
-![اضغط مطولاً على رسالة للوصول إلى الخيارات المتاحة.](../../../../images/mobile-mark-a-message-as-unread.gif)
-
-</div>

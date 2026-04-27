@@ -1,3 +1,5 @@
+
+/* global.css */
 @layer base, starlight, theme, components, utilities;
 
 @import '@astrojs/starlight-tailwind';
@@ -35,6 +37,7 @@
   --color-gray-800: #1F2A37;
   --color-gray-900: #111927;
   --color-gray-950: #0D121C;
+
 }
 
 /* تخصيص مظهر Starlight بناءً على الثيم المستخرج */
@@ -50,7 +53,10 @@
   --sl-color-gray-5: var(--color-gray-700);
   --sl-color-gray-6: var(--color-gray-800);
   --sl-color-black: var(--color-gray-950);
+ 
+
 }
+/* تغيير لون الخلفية والحد الجانبي للملاحظة */
 
 /* تعديلات الوضع المضيء لضمان وضوح النص */
 :root[data-theme='light'] {
@@ -66,3 +72,7 @@
   --sl-color-gray-6: var(--color-gray-100);
   --sl-color-black: var(--color-gray-25);
 }
+
+
+
+
