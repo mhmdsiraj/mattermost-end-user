@@ -1,3 +1,125 @@
 ---
-title: "إمكانية الوصول للوحة المفاتيح"
+title: Keyboard accessibility
 ---
+
+<Aside type="note">
+[\|plans-img-yellow\|](##SUBST##|plans-img-yellow|) Available on [Entry,
+Professional, Enterprise, and Enterprise Advanced
+plans](https://mattermost.com/pricing/)
+</Aside>
+
+
+Navigational keyboard shortcuts help you use Mattermost in a web browser
+or the desktop app without needing a mouse. Below is a list of supported
+accessibility shortcuts.
+
+<table>
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr>
+<th>Keyboard shortcut</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><div class="line-block">Desktop App: <code class="interpreted-text"
+role="kbd">F6</code><br />
+Browser: <code class="interpreted-text" role="kbd">Ctrl</code> <code
+class="interpreted-text" role="kbd">F6</code></div></td>
+<td><div class="line-block">Move focus to the next section<br />
+</div></td>
+</tr>
+<tr>
+<td><div class="line-block">Desktop App: <code class="interpreted-text"
+role="kbd">Shift</code> <code class="interpreted-text"
+role="kbd">F6</code><br />
+Browser: <code class="interpreted-text" role="kbd">Ctrl</code> <code
+class="interpreted-text" role="kbd">Shift</code> <code
+class="interpreted-text" role="kbd">F6</code></div></td>
+<td><div class="line-block">Move focus to the previous
+section</div></td>
+</tr>
+<tr>
+<td><code class="interpreted-text" role="kbd">Tab</code></td>
+<td>Move focus to the next element</td>
+</tr>
+<tr>
+<td><code class="interpreted-text" role="kbd">Shift</code> <code
+class="interpreted-text" role="kbd">Tab</code></td>
+<td>Move focus to the previous element</td>
+</tr>
+<tr>
+<td><code class="interpreted-text" role="kbd">↑</code> or <code
+class="interpreted-text" role="kbd">↓</code></td>
+<td>Move focus between messages in the post list or sections in the
+channel sidebar</td>
+</tr>
+<tr>
+<td><code class="interpreted-text" role="kbd">Enter</code></td>
+<td>Take action on the focused element</td>
+</tr>
+</tbody>
+</table>
+
+# Region navigation
+
+Mattermost has eight regions that can be focused for navigation. Use
+`F6` in the desktop app, or use `Ctrl` `F6` in a browser repeatedly to
+move focus and loop through the regions in this order:
+
+1.  Message list region
+2.  Message input region
+3.  Right-hand side message list region
+4.  Right-hand side message input region
+5.  Team menu region
+6.  Channel sidebar region
+7.  Channel header region
+8.  Search
+
+![Navigate through the sections of Mattermost using a keyboard.](../../../../images/navigation.gif)
+
+# Message navigation
+
+When the message list region is focused, use the `↑` or `↓` arrow keys
+to navigate through messages and reply threads. Press `Tab` to navigate
+through message actions.
+
+![Navigate through Mattermost messages using a keyboard.](../../../../images/message-navigation.gif)
+
+## Message composition
+
+Mattermost is compatible with most popular screen readers, such as
+[Apple VoiceOver](https://www.apple.com/ca/accessibility/vision/) or
+[JAWS for
+<span dir="ltr"><span dir="ltr"><span dir="ltr"><span dir="ltr"><span dir="ltr">Windows</span></span></span></span></span>](https://www.freedomscientific.com/products/software/jaws/). A
+custom readout is composed for each message by combining the message
+elements and reading them together in full sentences. Message elements
+will read in the following order:
+
+1.  Header: Author, timestamp, message type (i.e. parent post or reply)
+2.  Main Content: The message content typed by the author
+3.  Attachments: The number of attachments (if applicable)
+4.  Emoji Reactions: The number of unique emoji reactions (if
+    applicable)
+5.  Saves/Pins: If a message is saved or pinned (if applicable)
+
+For example, a message read by a screen reader may sound like the
+following:
+
+``` text
+Eric Sethna at 12:57pm Thursday June 13th wrote a reply "Thanks for the review", 3 attachments, 2 reactions, message is saved and pinned.
+```
+
+# Channel sidebar navigation
+
+When the channel sidebar region is focused, use the `↑` or `↓` arrow
+keys to focus individual sidebar sections, such as Insights, Threads,
+Favorites, custom categories, public channels, private channels, and
+direct messages. Press `Tab` to navigate through channels or other
+buttons within a sidebar section.
+
+![Navigate the Mattermost channel sidebar using a keyboard.](../../../../images/channel-sidebar-navigation.gif)

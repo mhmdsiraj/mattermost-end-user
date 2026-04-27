@@ -8,7 +8,7 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   integrations: [
     starlight({
-      title: "Mattermost",
+      title: "SOFA",
       logo: {
         src: "./src/assets/logo-light.jpg",
         alt: "Mattermost Logo",
