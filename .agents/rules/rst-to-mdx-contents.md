@@ -49,10 +49,10 @@ trigger: always_on
 
 ### **د. الروابط والمراجع:**
 
-- تحويل :doc: و :ref: إلى روابط Markdown قياسية \[النص\](./path-to-file.mdx).
+- تحويل :doc: و :ref: إلى روابط Markdown قياسية \[النص\](path-to-file).
 - تحويل الروابط الخارجية إلى \[النص\](URL).
 - أيضا انتبه للروابط التي تشير الى قسم ما داخل الصفحة وضمنها كرابط.
-- ايضا انتبه للروابط التي تشير الى صفحة ما ضمن قسم الend-user-guide ، حيث أن هيكل الملفات لدينا يختلف تماما عن هيكل الدوكس الرسمي هم ليس لديهم مجلدات فرعية داخل أقسام ال end-user-guide، إليك هيكلنا، عدل المسارات بناء عليه:
+- ايضا انتبه للروابط التي تشير الى صفحة ما ضمن قسم الend-user-guide ، حيث أن هيكل الملفات لدينا يختلف تماما عن هيكل الدوكس الرسمي هم ليس لديهم مجلدات فرعية داخل أقسام ال end-user-guide، و القالب الصحيح للروابط التي تشير لصفحة داخل المشروع هو [ main folder inside 'docs' folder/ sub-folder if the page is in subfolder / the page without the extension .mdx] . إليك هيكلنا، عدل المسارات بناء عليه:
   End User Guide [folder]
   └── End User Guide [page]
   Access Your Workspace [folder]

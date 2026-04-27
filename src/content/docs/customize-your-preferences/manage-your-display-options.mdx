@@ -4,10 +4,11 @@ description: "تعرف على كيفية تخصيص إعدادات العرض ف
 ---
 
 import { Tabs, TabItem } from '@astrojs/starlight/components';
+import FAIcon from "../../../components/FAIcon.astro";
 
 يمكنك تخصيص خيارات العرض في ماترموست بناءً على تفضيلاتك الشخصية.
 
-- **عبر الويب وسطح المكتب:** انقر على أيقونة الترس بجوار صورة ملفك الشخصي، ثم انتقل إلى **Display**.
+- **عبر الويب وسطح المكتب:** انقر على أيقونة الترس <FAIcon name="gear" />  بجوار صورة ملفك الشخصي، ثم انتقل إلى **Display**.
 - **عبر تطبيق الجوال:** اضغط على صورة ملفك الشخصي، ثم اضغط على **Settings > Display**.
 
 ## السمة (Theme)
@@ -16,7 +17,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
   <TabItem label="الويب وسطح المكتب">
     اختر **Theme** لتطبيق مظهر مختلف على ماترموست.
     اختر **Theme Colors** لتحديد واحدة من 5 سمات قياسية مصممة، أو اختر **Custom Theme** لتخصيص السمة الخاصة بك.
-    راجع وثائق [تخصيص السمة الخاصة بك](./customize-your-mattermost-theme.mdx) لمزيد من المعلومات.
+    راجع وثائق [تخصيص السمة الخاصة بك](/customize-your-preferences/customize-your-mattermost-theme) لمزيد من المعلومات.
   </TabItem>
   <TabItem label="الجوال">
     اضغط على **Theme** لاختيار واحدة من 5 سمات قياسية.

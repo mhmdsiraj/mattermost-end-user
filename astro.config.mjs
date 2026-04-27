@@ -283,7 +283,7 @@ export default defineConfig({
               collapsed: true,
             },
             {
-              label: "توسيع Mattermost باستخدام عمليات الدمج",
+              label: "توسيع Mattermost باستخدام التكاملات",
               slug: "messaging-collaboration/extend-mattermost-with-integrations",
             },
           ],
